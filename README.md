@@ -16,5 +16,3 @@ Emilio Buzzi
 Rodrigo Vela
 Sofía Chaves
 Mateo Burger
-
-------
