@@ -1,0 +1,23 @@
+{
+  "name": "grupo_3_happyeshop",
+  "version": "1.0.0",
+  "description": "Happy Shop es una solución eCommerce para la Venta Directa que facilita el trabajo de las vendedoras / consultoras permitiendo crear y administrar tu propia tienda online de manera simple y completa.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DHgrupo3/grupo_3_happyeshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DHgrupo3/grupo_3_happyeshop/issues"
+  },
+  "homepage": "https://github.com/DHgrupo3/grupo_3_happyeshop#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
