@@ -1,0 +1,177 @@
+/* Secciones principales */
+body {
+    font-family: 'Roboto';
+    background-color: rgb(235, 230, 230);
+    color: #666;
+}
+
+header {
+    background-color: #EAC926;
+    width: 100%;
+    color: black;
+    padding: 20px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+header ul {
+    padding-left: 3px;
+}
+
+main {
+    width: 90%;
+    margin: auto;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    background-color: white;
+    margin: 10px 2px;
+    line-height: 0.8rem;
+}
+
+footer h4{
+    margin-block-start: 0.6rem;
+    margin-block-end: 0.2rem;
+}
+
+footer p{
+    margin-block-start: 0.2rem;
+    margin-block-end: 0.1rem;
+}
+
+footer i{
+    margin-block-start: 3rem;
+    margin-block-end: 0rem;
+    font-size: 2rem;
+    color: #1259c3;
+}
+
+/* Estilos clásicos */
+p {
+    font-size: 12px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+img {
+    width: 100%;
+}
+
+/* Clases genéricas */
+.de-bloque {
+    display: block;
+}
+
+.de-linea {
+    display: inline;
+}
+
+.centrado {
+    text-align: center;
+}
+
+/* Clases específicas */
+.producto {
+    margin-top: 10px;
+    background-color: white;
+    width: 100%;
+}
+
+.detalle-producto{
+    border-top: 1px solid #ebebeb;
+    padding: 15px;
+    margin: 0px;
+}
+
+.precio {
+    font-size: 18px;
+    color: black;
+    line-height: 0.2rem;
+}
+
+.descuento {
+    color: #39b54a;
+    line-height: 0.2rem;
+}
+
+.descripcion {
+    display: none;
+    font-size: 16px;
+}
+
+.envio {
+    color:#39b54a;
+    border: solid #39b54a 1px;
+    padding: 15px;
+    border-radius: 100%;
+}
+
+.menu-hamburguesa {
+    display: block;
+    width: 25px;
+    background-color: blue;
+    border-radius: 0.4rem;
+    padding: 10px;
+    text-align: "center";
+    margin: auto;
+}
+
+.menu-web {
+    display: none;
+}
+
+.logo {
+    width: 50%;
+}
+
+.copyright {
+    margin-block-start: 3rem;
+    text-align: left;
+}
+
+
+@media (min-width: 361px) {
+
+    header p {
+        font-size: 18px;
+    }
+
+    .descripcion {
+        display: block;
+    }
+
+    .producto {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .logo {
+        width: 30%;
+    }   
+
+    .menu-hamburguesa {
+        display: none;
+    }
+
+    .menu-web {
+        display: block;
+    }
+
+}
+
+@media(min-width: 769px){
+
+}
+
+/* Paleta de colores
+Amarillo: #EAC926;
+Azul: #03264C;
+Celeste: #1259c3;
+Gris oscuro: #666;
+Gris claro: #ebebeb;
+Verde: #39b54a; */
