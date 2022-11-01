@@ -123,4 +123,141 @@ body{display:flex;
     
 
 
+}* {
+
+    box-sizing: border-box;
 }
+
+
+body{display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F0BB;
+    background-size: cover;
+    background-repeat: repeat;
+  
+
+}
+
+.barra{
+    height: 120px;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content:space-around;
+ background-color: #80be9f;
+ align-items: top;
+ width:99vw;
+ border-radius: 10px;
+
+}
+/*#121C84*/
+.up{
+    width: 15vw;
+    height:50px;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    transition:all 400ms;
+    background-color: #80be9f;
+    border-radius:10px;
+    outline:none;
+    justify-content:space-around;
+    margin-top: 10px;
+    border:none;
+
+}
+.up:hover{
+    background-color: #73A9AD;
+}
+.formulario{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    background-color: #80be9f;
+    width:25vw;
+    margin: 35px;
+    height:50vh;
+    border-radius: 20px;
+    border: solid 5px white;
+
+}
+.bienvenido{
+    font-size: 50px;
+    font-family: 'Noto Sans', sans-serif;
+    color: black;
+    position: relative;
+    top:10px;
+}
+.formin{
+    height:30px;
+    width:250px;
+    font-size: 18px;
+    color: black;
+    background-color: #DEF2F1;
+    position:relative;
+    bottom:45px;
+    border-radius: 5px;
+}
+.formin1{
+    height:30px;
+    width:250px;
+    font-size: 18px;
+    color: black;
+    background-color: #DEF2F1;
+    position:relative;
+    bottom:45px;
+    border-radius: 5px;
+}
+.iniciosesion{
+    height:50px;
+    width:150px;
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    color:white;
+    background-color: #121C84;
+    border-radius: 7px;
+    transition:all 400ms;
+    position:relative;
+    bottom:50px
+}
+.iniciosesion:hover{
+    background-color: #0D50A9; 
+}
+.olvidarcontra{border-radius: 5px;
+    outline:none;
+    background:none;
+    border:none;
+    color:#121C84;
+    position:relative;
+    bottom:40px
+}
+.olvidarcontra:hover{
+    color:#0D50A9;
+}
+.imagenlogo{
+    width: 13vw;
+    padding: 15px;
+    object-fit:scale-down;
+    position:relative;
+    bottom:9px;
+     border-radius: 40px;
+    
+
+
+}
+
+/* F5F0BB  DEF2F1  80be9f  73A9AD*/
+/* E9EFC0  83BD75  4E944F*/
+/* CFFF8D  73d151  425F57*/
+/* D6CDA4  3D8361  1C6758*/
+/* FFEDDB  BF9270*/
+/* F3C5C5  886F6F  694E4E*/
+/* AEFEFF  35858B  072227*/
+/* FFE6BC  8E806A*/
+/* */
+/* */

@@ -6,17 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/detailproduct.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/63355f2aa7.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
 
-    <title>Document</title>
+    <title>Happy e-Shop - Productos</title>
 </head>
 <body>
-    <header>
+    <header class="main-header">
+        <section class="logo"><img src="/img/hidroponia.png" class="imagenlogo"></section>
         <section class="barra">
-            <article>
-                <p class="up"><img src="/img/Logo.png" class="imagenlogo"></p>
-            </article>
             <article>
                 <button class="up">caracteristicas</button>
             </article>
@@ -33,58 +33,71 @@
                 <button class="up">ingresar</button>
             </article>
         </section>
+        <section class="space">&nbsp;</section>
+        <section class="burger-menu"><a href="#" ><i class="fas fa-bars img burger"></i></a></section>
     </header>
-    <section class="products">
-        <!-- Nos piden que manejemos el logo del envío, el precio, el porcentaje de descuento y la descripción del artículo como elementos de una caja dentro de la caja general del artículo. -->
-        <article class="product">
-            <div class="product-container-img">
-                <img class="product-img" src="/image/img-cafetera-moulinex.jpg" class="foto">
-            </div>
-            <div class="product-container-info">
-                <i class="fas fa-truck product-icon"></i>
-                <p class="product-price">$6.770</p>
-                <p class="product-discount">40% OFF</p>
-                <P class="product-name">Cafetera Moulinex</P>
-            </div>
-        </article>
+    <main>
+        <div class="main-header-button-img">
+            <img src="/img/img-home-banner.jpg" class="main-home-banner">
+        </div>
 
-        <article class="product">
-            <div class="product-container-img">
-                <img class="product-img" src="/image/img-macbook-pro-2019.jpg" class="foto">
-            </div>
-            <div class="product-container-info">
-                <i class="fas fa-truck product-icon"></i>
-                <p class="product-price">$230.000</p>
-                <p class="product-discount">20% OFF</p>
-                <p class="product-name">MacBook Pro 2019</p>
-            </div>
-        </article>
+        <p class="main-title-last-visit">Nuestros Productos</p>
 
-        <article class="product">
-            <div class="product-container-img">
-                <img class="product-img" src="/image/img-samsung-galaxy-s10.jpg" class="foto">
-            </div>
-            <div class="product-container-info">
-                <i class="fas fa-truck product-icon"></i>
-                <p class="product-price">$70.500</p>
-                <p class="product-discount">10% OFF</p>
-                <p class="product-name">Samsung Galaxy S10</p>
-            </div>
-        </article>
+        <section class="products">
+            <!-- Nos piden que manejemos el logo del envío, el precio, el porcentaje de descuento y la descripción del artículo como elementos de una caja dentro de la caja general del artículo. -->
+            <article class="product">
+                <div class="product-container-img">
+                    <img class="product-img" src="/img/Reductor_PH.jpg" >
+                </div>
+                <div class="product-container-info">
+                    <p class="product-price">$2.400</p>
+                    <p class="product-name">Reductor de PH ACME</p>
+                </div>
+                <div class="product-container-add">
+                    <p class="product-add-cart">Agregar al Carrito</p>
+                    <input class="enviar" type="submit" value="+" /> 0 <input class="enviar" type="reset" value="-" />
+                </div>
+            </article>
 
-        <article class="product">
-            <div class="product-container-img">
-                <img class="product-img" src="/image/img-tv-samsung-smart.jpg" class="foto">
-            </div>
-            <div class="product-container-info">
-                <i class="fas fa-truck product-icon"></i>
-                <p class="product-price">$23.200</p>
-                <p class="product-discount">5% OFF</p>
-                <p class="product-name">SmartTv Samsung 43"</p>
-            </div>
-        </article>
+            <article class="product">
+                <div class="product-container-img">
+                    <img class="product-img" src="/img/Medidor_PH.jpg" >
+                </div>
+                <div class="product-container-info">
+                    <p class="product-price">$6.700</p>
+                    <p class="product-name">Medidor de PH ACME</p>
+                </div>
+                <div class="product-container-add">
+                    <p class="product-add-cart">Agregar al Carrito</p>
+                    <input class="enviar" type="submit" value="+" /> 0 <input class="enviar" type="reset" value="-" />
+                </div>
+            </article>
 
-    </section>
+            <article class="product">
+                <div class="product-container-img">
+                    <img class="product-img" src="/img/Fenolica.jpg" >
+                </div>
+                <div class="product-container-info">
+                    <p class="product-price">$1.500</p>
+                    <p class="product-name">Espuma fenólica ACME</p>
+                </div>
+                <div class="product-container-add">
+                    <p class="product-add-cart">Agregar al Carrito</p>
+                    <input class="enviar" type="submit" value="+" /> 0 <input class="enviar" type="reset" value="-" />
+                </div>
+            </article>
+
+        </section>
+    </main>
+    <footer class="main-footer">
+        <ul class="main-footer-ads">
+            <li class="main-footer-ad-desc"><a href="#">Términos y condiciones</li></a>
+            <li class="main-footer-ad-desc"><a href="#">Happy e-Shop</li></a>
+            <li class="main-footer-ad-desc"><a href="#">Contactanos</li></a>
+        </ul>
+        <p class="main-footer-copyright">Copyright © 2022 Happy eShop S.A.</p>
+
+</footer>
 </body>
 </html>
 
