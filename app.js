@@ -29,3 +29,4 @@ app.get("/login", (req,res) => {
 app.get("/product", (req,res) => {
     res.sendFile(__dirname + "/views/productDetail.html");
 })
+
