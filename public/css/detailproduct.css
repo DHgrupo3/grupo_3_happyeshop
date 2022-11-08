@@ -333,5 +333,7 @@ body{
         /* flex-grow: 0.25; */
         max-width: 25%;
         /* flex-wrap: nowrap; */
+
+        
     }
 }
