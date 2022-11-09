@@ -1,0 +1,418 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body{display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #3AAFA9;
+    background-size: cover;
+    background-repeat: repeat;
+
+}
+footer{
+    text-align:left;
+    margin-bottom: 0;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+footer ul{
+    text-align: left;
+    margin-bottom: 0;
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    position: relative;
+    top: 250px;
+    flex-direction: row;
+}
+footer p{
+    margin: 15px;
+}
+
+
+.barra{
+    height: 120px;
+    display: none;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    background-color: #17252A;
+    align-items: top;
+    width:99vw;
+    border-radius: 10px;
+
+}
+
+.up{
+    width: 15vw;
+    height:50px;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    transition:all 400ms;
+    background-color: #17252A;
+    border-radius:10px;
+    outline:none;
+    justify-content:space-around;
+    margin-top: 10px;
+    border:none;
+    max-width: fit-content;
+    
+
+}
+
+.up:hover{
+    background-color: #2B7A78;
+}
+
+.imagenlogo{
+    width: 12vw;
+    padding: 15px;
+    object-fit:scale-down;
+    position:relative;
+     bottom:15px;
+     border-radius: 10px;
+}
+.imagenlogo{
+    width: 30vw;
+    padding: 15px;
+    object-fit:scale-down;
+    position:relative;
+    bottom:15px;
+    border-radius: 10px;
+} 
+
+.logo {
+    padding: 15px;
+}
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction:row;
+    justify-content:space-between;
+    background-color: #3AAFA9;
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+.burger-menu{
+    background-color: #90e093;
+    border-radius: 8px;
+    color: #FFF;
+    display: inline-block;
+    padding: 10px 10px;
+    font-size: 18px;
+    margin: 0;
+    max-width: 50px;
+    text-align: left;
+    margin: 50px 0px;
+}
+
+.descripcion{
+    font-size: 16px;
+    padding: 5px;
+    /* el descuento el 40% del total del renglón. */
+    max-width:60vw;
+    text-align: left;
+
+}
+.imagen-producto{
+    display: flex;
+    /* padding: 2px;
+    border: 2px; */
+    max-width: 40vw;
+    image-rendering: auto;
+
+}
+.info{
+    border-top: 1px solid #ebebeb;
+    padding: 15px;
+    width: 100%;
+    display: flex;
+}
+.div-img{
+    font-size: 18px;
+    padding: 5px;
+    /* donde el precio ocupa el 60% */
+    flex-wrap: wrap;
+    justify-content: left;
+}
+
+.cantidad{
+    display: flex;
+    flex-wrap: wrap;
+    height: 10px;
+  
+}
+/* .button-options{
+    border: none;
+    text-align:left;
+    display: flex;
+    outline: none;
+    border: none;
+    background-color:none;
+    top: 150px;
+    align-items: flex-end; */
+
+.buy-button{
+    display: flex;
+    font-size: 15px;
+    /* border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding: 8px 15px;    
+    background-color: #1259c3;
+    color: #fff;
+    border: 0; */
+}
+.button{
+    display: flex;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding: 5px 8px;
+    border: 0;
+    max-width: 60vw;
+
+}
+.cantidad{
+    display: flex;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 16px;
+    padding: 5px 8px;
+    border: 0;
+    width: 7vw;
+    height: 7vw;
+
+}
+
+.option-list{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    font-size: 12px;
+    justify-content: space-between;
+    padding: 0px 1px;
+
+
+}
+.envio{
+    top: 25px;
+    display: flex;
+    flex-direction: column;
+
+}
+.comprar{
+    width: 150px;
+    text-align:center;
+    justify-content: center;
+    display: inline-block;
+    outline: none;
+    background-color: #2B7A78;
+    border: none;
+    border-radius: 5px;
+    padding:  10px 15px;
+    font-size: 17px;
+    width: 100%;
+    bottom: 15px;
+
+}
+.comprar:hover{
+    background-color: white;
+}
+
+.opciones{
+    padding: 1px 0px;
+  
+}
+
+/* @media(min-width:361px){
+    .descripcion{
+        font-size: 16px;
+        padding: 5px;
+        /* el descuento el 40% del total del renglón. */
+        /* max-width:60vw;
+        text-align: left; */
+    
+    
+    /* .imagen-producto{
+        display: flex;
+        /* padding: 2px;
+        border: 2px; */
+        /* max-width: 40vw;
+        image-rendering: auto; */
+    
+    /* } */ 
+    @media (min-device-width: 361px){
+
+        body{
+            /* Estructura del menu */
+            align-items: center;
+        }
+    
+        .main-header{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: start;
+            max-width: 100%;
+            background-color: #3AAFA9;
+        
+        }
+    
+         
+        .imagenlogo{
+            width: 15vw;
+            padding: 15px;
+            object-fit:scale-down;
+            position:relative;
+            bottom:15px;
+            border-radius: 10px;
+        }
+    
+        .logo {
+            padding: 15px;
+        }
+    
+        .barra{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+    
+        .up{
+            margin: auto;
+            font-size: 12px;   
+        }
+    
+        .burger-menu{
+            display: none;
+        }
+    }
+
+    @media (min-device-width: 769px) {
+    
+        /* main {
+            display: flex;
+            flex-wrap: wrap;
+            font-size: 10px;
+            flex-direction: row;
+        } */
+        .barra{
+            max-width: 70vw;
+        }
+        .buy-button {
+            display: flex;
+            font-size: 14px;
+            width: 15px;
+            height: 47px;
+        }
+        .cantidad {
+            display: flex;
+            border-radius: 5px;
+            margin-top: 9px;
+            margin-bottom: 16px;
+            padding: 5px 8px;
+            border: 0;
+            width: 3vw;
+            height: 2.1vw;
+        }
+
+        .comprar{
+            width: 150px;
+            text-align:center;
+            justify-content: center;
+            display: flex;
+            outline: none;
+            background-color: #2B7A78;
+            border: none;
+            border-radius: 5px;
+            padding:  5px 8px;
+            font-size: 17px;
+            width: 20vw;
+            bottom: 15px;
+            transition: 450ms;
+        
+        }
+        .comprar:hover{
+            background-color:rgb(145, 212, 145);
+        }
+        .imagen-producto{
+            display: flex;
+            /* padding: 2px;
+            border: 2px; */
+            max-width: 40vw;
+            image-rendering: auto;
+        
+        }
+               
+        }
+        .info{
+            border-top: 1px solid #ebebeb;
+            padding: 15px;
+            width: 100%;
+            display: flex;
+        }
+        .div-img{
+            font-size: 25px;
+            padding: 5px;
+            /* donde el precio ocupa el 60% */
+            flex-wrap: wrap;
+            justify-content: left;
+        }
+        .descripcion{
+            font-size: 23px;
+            padding: 5px;
+            /* el descuento el 40% del total del renglón. */
+            max-width:60vw;
+            text-align: left;
+        }
+        .option-list{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            font-size: 18px;
+            justify-content: space-between;
+            padding: 0px 1px;
+        
+        
+        }
+        .envio{
+            top: 23px;
+            display: flex;
+            flex-direction: column;
+            font-size: 25px;
+        }
+        
+        .imagenlogo{
+            width: 15vw;
+            padding: 15px;
+            object-fit:scale-down;
+            position:relative;
+            bottom:15px;
+            border-radius: 10px;
+        }
+    
+        .logo {
+            padding: 15px;
+        }
+        .button{
+            display: flex;
+            border-radius: 5px;
+            margin-top: 9px;
+            margin-bottom: 13px;
+            padding: 5px 8px;
+            border: 0;
+            max-width: 60vw;
+        
+        }

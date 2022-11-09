@@ -14,6 +14,34 @@ app.use(express.static('public'));
 app.listen(3000, () => console.log ("Servidor corriendo"));
 
 //Al objeto app le pedimos dos parámetros URL | CallBack (req, res) : Req (Toda la info de la peticón que llego) y Res (Todas la propiedades y metodos de la respuesta que vamos a enviar)
-app.get('/home',(req,res) => {
-    res.send('Hola, estamos en el home');
-});
+app.get("/", (req,res) => {
+    res.sendFile(__dirname + "/views/index.html");
+})
+
+app.get("/register", (req,res) => {
+    res.sendFile(__dirname + "/views/register.html");
+})
+
+app.get("/login", (req,res) => {
+    res.sendFile(__dirname + "/views/login.html");
+})
+
+app.get("/products", (req,res) => {
+    res.sendFile(__dirname + "/views/productList.html");
+})
+
+app.get("/cart", (req,res) => {
+    res.sendFile(__dirname + "/views/productCart.html");
+})
+
+app.get("/who", (req,res) => {
+    res.sendFile(__dirname + "/views/who.html");
+})
+
+app.get("/terminos", (req,res) => {
+    res.sendFile(__dirname + "/views/terminos.html");
+})
+
+app.get("/contactanos", (req,res) => {
+    res.sendFile(__dirname + "/views/contactanos.html");
+})

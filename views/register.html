@@ -4,10 +4,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/registro.css" rel="stylesheet">
-    <title>Document</title>
+    <link href="css/register.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/63355f2aa7.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+
+    <title>Happy e-Shop - Registrate</title>
 </head>
 <body>
+    <header class="main-header">
+        <section class="logo"><img src="/img/hidroponia.png" class="imagenlogo"></section>
+        <section class="barra">
+            <article>
+                <button class="up">caracteristicas</button>
+            </article>
+            <article>
+                <button class="up">precio</button>
+            </article>
+            <article>
+                <button class="up">preguntas frecuentes</button>
+            </article>
+            <article>
+                <button class="up">contacto</button>
+            </article>
+            <article>
+                <button class="up">ingresar</button>
+            </article>
+        </section>
+        <section class="burger-menu"><a href="#" ><i class="fas fa-bars img"></i></a></section>
+    </header>
+    <main>
+        <div class="mainContent">
+        <section class="registerMainFoto"><img src="/img/hidroponia.png" class="registerFoto"></section>
+        <section class="registerSection">
+            <form class="register" action="/" method="GET">
+                    <ul>
+                    <li><input type="text" name="name"  placeholder="Nombre y Apellido" required/></li>
+                    <br>
+                    <li><input type="email" name="email" placeholder="email"/></li>
+                    <br>
+                    <li><input type="date" name="nacimiento" /></li>
+                    <br>
+                    <li><input type="text" name="domicilio" placeholder="Domicilio:"/></li>
+                    <br>
+                    <li><input type="text" name="ciudad" placeholder="Ciudad:"/></li>
+                    <br>
+                    <li><input type="text" name="pais" placeholder="Pais:"/></li>
+                    <br>
+            </form>
+        </section>
+        </div>
+    </main>
+    <footer>
+        <section class="pie">
+            <i class="fa-sharp fa-solid fa-envelope"></i>
+            <p class="footerItem"><a href="#">Términos y condiciones</p></a>
+        </section>
+        <section>
+            <i class="fa-sharp fa-solid fa-envelope"></i>
+            <p class="footerItem"><a href="#">Happy e-Shop</p></a>
+        </section>
+        <section>
+            <i class="fa-sharp fa-solid fa-envelope"></i>
+            <p class="footerItem"><a href="#">Contactanos</p></a>
+        </section>
+        
+</footer>
+
     
 </body>
 </html>
