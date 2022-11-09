@@ -13,8 +13,6 @@ body{display:flex;
     background-size: cover;
     background-repeat: repeat;
 
-    
-
 }
 
 .barra{
@@ -28,7 +26,6 @@ body{display:flex;
  border-radius: 10px;
 
 }
-/*#121C84*/
 .up{
     width: 15vw;
     height:50px;
@@ -65,7 +62,7 @@ body{display:flex;
 .bienvenido{
     font-size: 50px;
     font-family: 'Noto Sans', sans-serif;
-    color: black;
+    color: white;
     position: relative;
     top:10px;
 }
@@ -110,7 +107,7 @@ body{display:flex;
     border:none;
     color:#121C84;
     position:relative;
-    bottom:40px
+    bottom:40px;
 }
 .olvidarcontra:hover{
     color:#0D50A9;
@@ -122,144 +119,306 @@ body{display:flex;
     position:relative;
      bottom:15px;
      border-radius: 10px;
+}
+.logo{
+    width:12vw;
+}
+@media (min-width: 361px){
+
+    body{
+    
+        align-items: center;
+        background-color:#3AAFA9 ;
+        
+    }
+    .barra{
+        height: 120px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content:space-around;
+     background-color: #17252A;
+     align-items: top;
+     width:99vw;
+     border-radius: 10px;
+        
+    }
+    .up{
+        display:none;
+    }
+
+    .formulario{
+        width:80vw;
+        background-color: #2B7A78;
+
+    }
+    .bienvenido{
+        font-size: 40px;
+        font-family: 'Noto Sans', sans-serif;
+        color: black;
+        position: relative;
+        top:10px;
+        margin-top: 10px;
+    }
+    .formin{
+      position: relative;
+      top:0.5px;
+      width:67vw;
     
 
+    }
+    .formin1{ position: relative;
+        top:0.5px;
+        width:67vw;
 
-}* {
-
-    box-sizing: border-box;
+    }
+    .iniciosesion{position: relative;
+        top:0.5px;
+}
+    .olvidarcontra{position: relative;
+        top:0.5px;
 }
 
 
-body{display:flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #F5F0BB;
-    background-size: cover;
-    background-repeat: repeat;
-  
+    .imagenlogo{
+        width:130px;
+        text-align: center;
+    }
+    .logo{text-align: center;}
+    .burger-menu{
+        background-color: #90e093;
+        border-radius: 8px;
+        color: #FFF;
+        display: block; 
+        padding: 10px 10px;
+        font-size: 22px;
+        max-width: 50px;
+        max-height: 1.7em;
+        position:relative;
+        top:35px;
+        display:flex;
+        flex-wrap: wrap;
+        align-items:flex-start;
+      
+    }
+    .burger-menu i {
+        text-align:right;
+        justify-content: flex-end;
+        height: 5px;
+        color:black;
+    }
 
 }
+@media (min-width: 768px){
 
-.barra{
-    height: 120px;
- display: flex;
- flex-wrap: wrap;
- justify-content:space-around;
- background-color: #80be9f;
- align-items: top;
- width:99vw;
- border-radius: 10px;
+    body{
+    
+        align-items: center;
+        background-color:#3AAFA9 ;
+        
+    }
+    .barra{
+        height: 120px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content:space-around;
+     background-color: #17252A;
+     align-items: top;
+     width:135vw;
+     border-radius: 10px;
+        
+    }
+    .up{
+        display:none;
+    }
 
-}
-/*#121C84*/
-.up{
-    width: 15vw;
-    height:50px;
-    font-size: 18px;
-    font-family: 'Noto Sans', sans-serif;
-    color: white;
-    transition:all 400ms;
-    background-color: #80be9f;
-    border-radius:10px;
-    outline:none;
-    justify-content:space-around;
-    margin-top: 10px;
-    border:none;
+    .formulario{
+        width:60vw;
+        background-color: #2B7A78;
+        height:80vh;
 
-}
-.up:hover{
-    background-color: #73A9AD;
-}
-.formulario{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-    background-color: #80be9f;
+    }
+    .bienvenido{
+        font-size: 70px;
+        font-family: 'Noto Sans', sans-serif;
+        color: black;
+       
+    }
+    .formin{
+        position: relative;
+        bottom:10vw;
+        height:10vh;
+      width:50vw;
+      border-radius: 10px;
+      font-size: 35px;
+    
+
+    }
+    .formin1{  position: relative;
+        bottom:10vw;
+        height:10vh;
+      width:50vw;
+      border-radius: 10px;
+      font-size: 35px;
+
+    }
+    .centrar{position:relative;
+    bottom:30px;}
+
+   .iniciosesion{
     width:25vw;
-    margin: 35px;
-    height:50vh;
-    border-radius: 20px;
-    border: solid 5px white;
+    height:10vh;
+    font-size: 25px;
+   }
+   .iniciando{position:relative;
+bottom:40px;}
+    
+.subir{
+    position: relative;
+    bottom:35px;
+    width:40vw;
+    text-align: center;
+}
+.olvidarcontra{position: relative;
+        top:0.5px;
+       font-size: 16px;
+}
+
+    .imagenlogo{
+        width:130px;
+        text-align: center;
+
+    }
+    .burger-menu{
+        background-color: #90e093;
+        border-radius: 8px;
+        color: #FFF;
+        display: block; 
+        padding: 10px 10px;
+        font-size: 35px;
+        max-width: 50px;
+        max-height: 1.7em;
+        position:relative;
+        top:35px;
+        display:flex;
+        flex-wrap: wrap;
+        align-items:flex-start;
+      
+    }
+    .burger-menu i {
+        text-align:right;
+        justify-content: flex-end;
+        height: 5px;
+        color:black;
+    }
 
 }
-.bienvenido{
-    font-size: 50px;
-    font-family: 'Noto Sans', sans-serif;
-    color: black;
-    position: relative;
-    top:10px;
-}
-.formin{
-    height:30px;
-    width:250px;
-    font-size: 18px;
-    color: black;
-    background-color: #DEF2F1;
-    position:relative;
-    bottom:45px;
-    border-radius: 5px;
-}
-.formin1{
-    height:30px;
-    width:250px;
-    font-size: 18px;
-    color: black;
-    background-color: #DEF2F1;
-    position:relative;
-    bottom:45px;
-    border-radius: 5px;
-}
-.iniciosesion{
-    height:50px;
-    width:150px;
-    font-size: 20px;
-    font-family: 'Noto Sans', sans-serif;
-    color:white;
-    background-color: #121C84;
-    border-radius: 7px;
-    transition:all 400ms;
-    position:relative;
-    bottom:50px
-}
-.iniciosesion:hover{
-    background-color: #0D50A9; 
-}
-.olvidarcontra{border-radius: 5px;
-    outline:none;
-    background:none;
-    border:none;
-    color:#121C84;
-    position:relative;
-    bottom:40px
-}
-.olvidarcontra:hover{
-    color:#0D50A9;
-}
-.imagenlogo{
-    width: 13vw;
-    padding: 15px;
-    object-fit:scale-down;
-    position:relative;
-    bottom:9px;
-     border-radius: 40px;
+
+@media (min-width:1200px){
+
+    body{
+    
+        align-items: center;
+        background-color:#3AAFA9 ;
+        
+    }
+    .barra{
+        height: 120px;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content:space-around;
+     background-color: #17252A;
+     align-items: top;
+     width:135vw;
+     border-radius: 10px;
+        
+    }
+    .up{
+        display: contents;
+        position: relative;
+        
+    }
+    .up:hover{background-color: #2B7A78;}
+    .hola{position: relative;
+    top:35px;}
+
+    .formulario{
+        width:50vw;
+        background-color: #2B7A78;
+        height:80vh;
+
+    }
+    .bienvenido{
+        font-size: 70px;
+        font-family: 'Noto Sans', sans-serif;
+        color: black;
+       
+    }
+    .formin{
+        position: relative;
+        bottom:10vw;
+        height:10vh;
+      width:40vw;
+      border-radius: 10px;
+      font-size: 35px;
     
 
+    }
+    .formin1{  position: relative;
+        bottom:10vw;
+        height:10vh;
+      width:40vw;
+      border-radius: 10px;
+      font-size: 35px;
 
+    }
+    .centrar{position:relative;
+    bottom:30px;}
+
+   .iniciosesion{
+    width:20vw;
+    height:10vh;
+    font-size: 25px;
+   }
+   .iniciando{position:relative;
+bottom:40px;}
+    
+.subir{
+    position: relative;
+    bottom:35px;
+    width:40vw;
+    text-align: center;
+}
+.olvidarcontra{position: relative;
+        top:0.5px;
+       font-size: 16px;
 }
 
-/* F5F0BB  DEF2F1  80be9f  73A9AD*/
-/* E9EFC0  83BD75  4E944F*/
-/* CFFF8D  73d151  425F57*/
-/* D6CDA4  3D8361  1C6758*/
-/* FFEDDB  BF9270*/
-/* F3C5C5  886F6F  694E4E*/
-/* AEFEFF  35858B  072227*/
-/* FFE6BC  8E806A*/
-/* */
-/* */
+    .imagenlogo{
+        width:130px;
+        text-align: center;
+
+    }
+    .burger-menu{
+        background-color: #90e093;
+        border-radius: 8px;
+        color: #FFF;
+        display: block; 
+        padding: 10px 10px;
+        font-size: 35px;
+        max-width: 50px;
+        max-height: 1.7em;
+        position:relative;
+        top:35px;
+        display:flex;
+        flex-wrap: wrap;
+        align-items:flex-start;
+      
+    }
+    .burger-menu i {
+        text-align:right;
+        justify-content: flex-end;
+        height: 5px;
+        color:black;
+    }
+
+}

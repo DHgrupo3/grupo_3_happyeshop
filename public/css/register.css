@@ -4,15 +4,13 @@
 
 .barra{
     height: 120px;
- display: flex;
- flex-wrap: wrap;
- justify-content:space-around;
- background-color: #17252A;
- align-items: top;
- width:99vw;
- border-radius: 10px;
-
- 
+    display: none;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    background-color: #17252A;
+    align-items: top;
+    width:99vw;
+    border-radius: 10px;
 
 }
 
@@ -29,6 +27,8 @@
     justify-content:space-around;
     margin-top: 10px;
     border:none;
+    max-width: fit-content;
+    
 
 }
 
@@ -43,16 +43,18 @@
     position:relative;
      bottom:15px;
      border-radius: 10px;
+     
 }
 
 body{display:flex;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
+    /* align-items: center; */
     background-color: #3AAFA9;
     background-size: cover;
     background-repeat: repeat;
+    
 
 }
 
@@ -64,15 +66,175 @@ body{display:flex;
 .register{
     display:flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    justify-content: space-around;
     flex-direction: column;
-    align-items: center;
-    background-color: #2B7A78;
-    width:25vw;
-    margin: 35px;
-    height:50vh;
+    background-color: #FCFFB2;
     border-radius: 20px;
-    border: solid 5px #DEF2F1;
+    border: solid 5px #90e093;
+    margin: 10px;
+}
 
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    
+
+}
+
+
+.registerSection{
+    display: flex;
+    justify-content: center;
+    
+}    
+
+.imagenlogo{
+    width: 30vw;
+    padding: 15px;
+    object-fit:scale-down;
+    position:relative;
+    bottom:15px;
+    border-radius: 10px;
+} 
+
+.logo {
+    padding: 15px;
+}
+
+.burger-menu{
+    background-color: #90e093;
+    border-radius: 8px;
+    color: #FFF;
+    display: flex; 
+    padding: 10px 10px;
+    font-size: 18px;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 100%;
+    flex-direction:row;
+    justify-content:space-between;
+    background-color: #3AAFA9;
+    background-size: cover;
+    background-repeat: repeat;
+    
+
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 10px;
+    flex-direction: column;
+    
+}
+
+
+.registerFoto {
+    max-width: 90vw;
+    
+
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #90e093;
+    max-width: 99vw;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+ 
+@media (min-device-width: 361px){
+
+    body{
+        /* Estructura del menu */
+        align-items: center;
+    }
+
+    .main-header{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        max-width: 100%;
+        background-color: #3AAFA9;
+    
+    }
+
+    .logo{
+        max-width: 30vw;
+        margin-right: 5vw;
+    }
+
+    .imagenlogo {
+            display: flex;
+            flex-wrap: nowrap;
+            
+            
+    }
+
+    .barra{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+
+    }
+
+    .up{
+        margin: auto;
+        font-size: 12px;
+            
+    }
+
+    .burger-menu{
+        display: none;
+    }
+}
+
+@media (min-device-width: 769px) {
+    
+    main {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 10px;
+        flex-direction: row;
+    }
+
+    .mainContent{
+        display: flex;
+        justify-content: space-around;
+    }
+    
+
+    .registerFoto{
+        max-width: 50vw;
+        margin: 5vw;
+     
+    }
+
+    .registerSection{
+        align-items: center;
+    }
+
+    .barra{
+        max-width: 70vw;
+    }
+
+    .registerMainFoto{
+        display: flex;
+    }
+    
 }

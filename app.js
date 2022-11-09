@@ -26,7 +26,22 @@ app.get("/login", (req,res) => {
     res.sendFile(__dirname + "/views/login.html");
 })
 
-app.get("/product", (req,res) => {
-    res.sendFile(__dirname + "/views/productDetail.html");
+app.get("/products", (req,res) => {
+    res.sendFile(__dirname + "/views/productList.html");
 })
 
+app.get("/cart", (req,res) => {
+    res.sendFile(__dirname + "/views/productCart.html");
+})
+
+app.get("/who", (req,res) => {
+    res.sendFile(__dirname + "/views/who.html");
+})
+
+app.get("/terminos", (req,res) => {
+    res.sendFile(__dirname + "/views/terminos.html");
+})
+
+app.get("/contactanos", (req,res) => {
+    res.sendFile(__dirname + "/views/contactanos.html");
+})
