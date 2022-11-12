@@ -147,7 +147,6 @@ main {
 footer {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     background-color: #90e093;
     max-width: 99vw;
     padding: 5px;
