@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="stylesheets/index.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/63355f2aa7.js" crossorigin="anonymous"></script>
@@ -14,34 +14,12 @@
     <title>Happy e-Shop - Home</title>
 </head>
 <body>
-    <header class="main-header">
-        <!-- <section class="logo"><img src="/img/hidroponia.png" class="imagenlogo"></section> -->
-        <section class="barra">
-            <article class="logo"><a href="/"><img src="/images/hidroponia.png" class="imagenlogo"></a></article>
-            <article>
-                <button class="up"><a href="/products">Productos</a></button>
-            </article>
-            <article>
-                <button class="up"><a href="/who">Quienes Somos</a></button>
-            </article>
-            <article>
-                <button class="up"><a href="/login">Acceder</a></button>
-            </article>
-            <article>
-                <button class="up"><a href="/register">Registrate</a></button>
-            </article>
-            <article>
-                <button class="up"><a href="/cart">Carrito</a></button>
-            </article>
-            <article class="burger-menu"><a href="#" ><i class="fas fa-bars img burger"></i></a></article>
-        </section>
-        <!-- <section class="space">&nbsp;</section> -->
-        <!-- <section class="burger-menu"><a href="#" ><i class="fas fa-bars img burger"></i></a></section> -->
-    </header>
+    <%- include ("partials/header") %>
     <main>
         x
     </main>
     <%- include ("partials/footer") %>
+    
 </body>
 
 </html>

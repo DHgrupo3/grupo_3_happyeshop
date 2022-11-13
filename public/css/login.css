@@ -178,12 +178,13 @@ body{display:flex;
         top:0.5px;
 }
 
-
     .imagenlogo{
         width:130px;
         text-align: center;
     }
+
     .logo{text-align: center;}
+    
     .burger-menu{
         background-color: #90e093;
         border-radius: 8px;

@@ -47,3 +47,7 @@ app.get("/terminos", (req,res) => {
 app.get("/contactanos", (req,res) => {
     res.render(__dirname + "/views/contactanos");
 })
+
+app.get("/ABM", (req,res) => {
+    res.render(__dirname + "/views/ABM_Productos");
+})
