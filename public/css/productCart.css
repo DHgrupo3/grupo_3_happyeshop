@@ -174,7 +174,7 @@ footer p{
     color: #fff;
     border: 0; */
 }
-.button{
+.buy-button{
     display: flex;
     border-radius: 5px;
     margin-top: 10px;
@@ -356,7 +356,7 @@ footer p{
         
         }
                
-        }
+        
         .info{
             border-top: 1px solid #ebebeb;
             padding: 15px;
@@ -385,7 +385,6 @@ footer p{
             justify-content: space-between;
             padding: 0px 1px;
         
-        
         }
         .envio{
             top: 23px;
@@ -406,7 +405,7 @@ footer p{
         .logo {
             padding: 15px;
         }
-        .button{
+        .buy-button{
             display: flex;
             border-radius: 5px;
             margin-top: 9px;
@@ -416,3 +415,22 @@ footer p{
             max-width: 60vw;
         
         }
+        footer {
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #90e093;
+            width: 100%;
+            padding: 5px;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            flex-direction: row;
+        }
+        .icons{
+            padding: 5px;
+            border-radius: 10px;
+            font-size: 14px;
+            margin-top: -1px;
+            text-align: center;
+        }
+    }
