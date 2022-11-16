@@ -17,37 +17,41 @@ app.listen(3000, () => console.log ("Servidor corriendo"));
 
 //Al objeto app le pedimos dos parámetros URL | CallBack (req, res) : Req (Toda la info de la peticón que llego) y Res (Todas la propiedades y metodos de la respuesta que vamos a enviar)
 app.get("/", (req,res) => {
-    res.render(__dirname + "/views/index");
+    res.render(__dirname + "/src/views/index");
 })
 
 app.get("/register", (req,res) => {
-    res.render(__dirname + "/views/register");
+    res.render(__dirname + "/src/views/users/register");
 })
 
 app.get("/login", (req,res) => {
-    res.render(__dirname + "/views/login");
+    res.render(__dirname + "/src/views/users/login");
 })
 
 app.get("/products", (req,res) => {
-    res.render(__dirname + "/views/productList");
+    res.render(__dirname + "/src/views/products/productList");
 })
 
 app.get("/cart", (req,res) => {
-    res.render(__dirname + "/views/productCart");
+    res.render(__dirname + "/src/views/products/productCart");
 })
 
 app.get("/who", (req,res) => {
-    res.render(__dirname + "/views/who");
+    res.render(__dirname + "/src/views/who");
 })
 
 app.get("/terminos", (req,res) => {
-    res.render(__dirname + "/views/terminos");
+    res.render(__dirname + "/src/views/terminos");
 })
 
 app.get("/contactanos", (req,res) => {
-    res.render(__dirname + "/views/contactanos");
+    res.render(__dirname + "/src/views/contactanos");
 })
 
-app.get("/ABM", (req,res) => {
-    res.render(__dirname + "/views/ABM_Productos");
+app.get("/create", (req,res) => {
+    res.render(__dirname + "/src/views/products/create_product");
+})
+
+app.get("/edit", (req,res) => {
+    res.render(__dirname + "/src/views/products/edit_product");
 })

@@ -10,7 +10,7 @@
     <title>Happy e-Shop - Carrito de Compras</title>
 </head>
 <body>
-    <%- include ("partials/header") %>
+    <%- include ("../partials/header") %>
     
  <main>
     <section>
@@ -23,45 +23,42 @@
                     <p>Regulador De Ph Hidroponia </p>
                     <br>
                     <br>
-
                     <p>Envío gratis</p>
                 </span>
                 <span class="buy-button">
-                    <button class="button"> - </button>
-                     <input class="cantidad" type="text" value="0">
-                    <button class="button"> + </button>
+                    <input class="enviar" type="submit" value="+" /> 0 <input class="enviar" type="reset" value="-" />
                 </span>
             </div>
         </article>
         <article class="opciones">
             <br>
-        
             <ul class="option-list">
                 <li><a href="#">Eliminar</li></a>
                 <li><a href="#">Productos similares</li></a>
                 <li><a href="#">Comprar ahora</li></a>
                 <li><a href="#">Guardar para después</li></a>
             </ul>
-            <br>
-            <br>
-            <br>
-            <br>
+                <br>
+                <br>
+                <br>
+                <br>
             <div class="envio">
                 <P>Envío a Sarmiento 1551, San Miguel</P>
                 <br>
                 <p>Costo total $3500</p>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
+                <br>
+                <br>
+                <br>
+                <br>
             
-           <input class="comprar" type="submit" value="Comprar">
+            <input class="comprar" type="submit" value="Comprar">
+            
         </article>
     </section>
 
 
 </main>
-<%- include ("partials/footer") %>
+<%- include ("../partials/footer") %>
 </body>
 </html>
