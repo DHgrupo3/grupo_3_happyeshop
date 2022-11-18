@@ -28,16 +28,19 @@ app.listen(3000, () => console.log ("Servidor corriendo"));
 
 const mainRouter = require ('./routes/main');
 const productsRouter = require ('./routes/products');
+const userRouter = require ('./routes/users');
 
 app.use('/', mainRouter);
-app.use('/who', mainRouter);
-app.use('/terminos', mainRouter);
 
 
-app.use('/products', productsRouter);//no puedo llegar a la pagina
-app.use('/cart', productsRouter);//no puedo llegar a la pagina
+app.use('/products', productsRouter);
 
-app.use('/register', productsRouter);//no puedo llegar a la pagina
+
+app.use('/user', userRouter);
+
+
+
+//app.use('/login', userRouter);
 
 
 /* Ruta register desactivada
@@ -46,6 +49,7 @@ app.get("/register", (req,res) => {
 })*/ 
 
  
+/* Ruta login desactivada
 app.get("/login", (req,res) => {
     res.render(__dirname + "/src/views/users/login");
 })
@@ -70,7 +74,7 @@ app.get("/terminos", (req,res) => {
     res.render(__dirname + "/src/views/terminos");
 })*/
 
-app.get("/contactanos", (req,res) => {
+/*app.get("/contactanos", (req,res) => {
     res.render(__dirname + "/src/views/contactanos");
 })
 
@@ -80,4 +84,4 @@ app.get("/create", (req,res) => {
 
 app.get("/edit", (req,res) => {
     res.render(__dirname + "/src/views/products/edit_product");
-})
+})*/

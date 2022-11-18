@@ -8,8 +8,13 @@ router.get('/', function(req, res, next) {
 
 const productsController = require('../controllers/productsController');
 
-router.get ('/products', productsController.index);
-router.get ('/cart', productsController.cart);
-router.get('/register', productsController.register);
+router.get ('/', productsController.index);
+router.get ('/productDetail', productsController.detail);
+router.get ('/edit_product', productsController.edit);
+router.get ('/create_product', productsController.create);
+
+
+
+
 
 module.exports = router;
