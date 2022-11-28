@@ -17,3 +17,17 @@ Nos encontramos con los siguientes factores que dificultan el correcto desarroll
 - Como grupo vemos que a pesar de la falta de tiempo individual debido a las actividades laborales de cada uno, estudiar los contenidos del curso y realizar las actividades de playground, somos un equipo comprometido con los sprints y gracias a la buena onda de todos los integrantes llegamos con las entregas en tiempo y forma. 
 
 
+SPRINT 4
+--------
+
+Nos encontramos con los siguientes puntos para destacar:
+
+- Consolidamos las reuniones semanales los lunes y jueves.
+- Avanzamos con el entendimiento de los conceptos vistos en clase y como trasladarlos a la solución.
+- Buscamos evitar tiempos muertos en las comunicaciones y potenciar las consultas via whatsapp.
+- Buscamos consolidar Trello como herramienta de seguimiento.
+- Canalizaremos las dudas técnicas con el equipo docente.
+- Dada la etapa del año vemos que los compromisos sociales y laborales impactan en la dinámica de cursa y realización de actividades en Playground. 
+
+
+
