@@ -1,0 +1,47 @@
+[
+    {
+        "id": "1",
+        "nombre del producto": "Espuma Fenolica", 
+        "descripción": "Espuma fenólica para multisemillas o semillas pelletizadas, con perforación" ,
+        "imagen": "Fenolica.jpg",
+        "precio":  "$1500",
+        "categoria": "En oferta"
+
+    },
+    {
+        "id": "2",
+        "nombre del producto": " Medidor de PH ACME", 
+        "descripción": "Medidor portátil digital de PH de alta precisión" ,
+        "imagen": "Medidor_PH.jpg",
+        "precio":  "$6700",
+        "categoria": "En oferta"
+
+    },
+    {
+        "id": "3",
+        "nombre del producto": " Reductor de PH", 
+        "descripción": "Reductor de PH para regular el grado de acidez" ,
+        "imagen": "Reductor_PH.jpg",
+        "precio":  "$2400",
+        "categoria": "Últimos agregados"
+    
+
+        },
+    {
+        "id": "4",
+        "nombre del producto": "Kit hidropónico", 
+        "descripción": "N°2 Sistema de cultivo NFT de 15 macetas, ideal para balcones" ,
+        "imagen": "Sales_Minerales.jpg",
+        "precio":  "$7200",
+        "categoria": "Últimos agregados"
+
+    },
+    {   
+        "id": "5",
+        "nombre del producto": "Sales minerales", 
+        "descripción": "Sales minerales para fertilización, etapa de vegetación A,B y C" ,
+        "imagen": "Sales_Minerales.jpg",
+        "precio":  "$7200",
+        "categoria": "En oferta"
+    }
+]
