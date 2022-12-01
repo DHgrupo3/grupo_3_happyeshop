@@ -14,11 +14,21 @@
     <title>Happy e-Shop - Home</title>
 </head>
 <body>
-    <%- include ("partials/header") %>
+    <%- include ("../partials/header") %>
     <main>
+        <article>
+            <button class="up"><a href="/products/create_product">Crear Producto</a></button>
+        </article>
+        <article>
+            <button class="up"><a href="/products/edit_product">Editar Producto</a></button>
+        </article>
+        <article>
+            <button class="up"><a href="/who">Borrar Producto</a></button>
+        </article>
         
+        <article class="burger-menu"><a href="#" ><i class="fas fa-bars img burger"></i></a></article>
     </main>
-    <%- include ("partials/footer") %>
+    <%- include ("../partials/footer") %>
     
 </body>
 

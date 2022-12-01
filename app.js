@@ -29,14 +29,15 @@ app.listen(3000, () => console.log ("Servidor corriendo"));
 const mainRouter = require ('./routes/main');
 const productsRouter = require ('./routes/products');
 const userRouter = require ('./routes/users');
+const adminRouter = require ('./routes/admin');
 
 app.use('/', mainRouter);
 
-
 app.use('/products', productsRouter);
 
-
 app.use('/user', userRouter);
+
+app.use('/admin', adminRouter);
 
 
 

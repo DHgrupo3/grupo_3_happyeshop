@@ -31,3 +31,10 @@ Nos encontramos con los siguientes puntos para destacar:
 
 
 
+<% productos.forEach(productos => { %>  
+            <tr>
+                <td><%= productos.id%> </td>
+                <td><%=productos.nombre%> </td>
+
+            </tr>
+        <%  }); %>    
