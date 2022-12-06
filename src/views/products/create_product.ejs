@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div >
-                <form action="¿?" method="___">
+                <form method="POST" action="/admin/create_product" enctype="multipart/form-data">
                     <div >
                         <div >
                             <label for="name" >Nombre del producto:</label>
@@ -50,6 +50,10 @@
                         <div >
                             <label for="description" >Descipción:</label>
                             <textarea name="description" id="description" ></textarea>
+                        </div>
+                        <div >
+                            <label for="imagen" >Imagen:</label>
+                            <input type="file" name="imagen" ></input>
                         </div>
                         <div >
                             <button type="submit" >Guardar producto</button>

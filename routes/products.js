@@ -14,7 +14,4 @@ router.get ('/edit_product', productsController.edit);
 router.get ('/create_product', productsController.create);
 
 
-
-
-
 module.exports = router;

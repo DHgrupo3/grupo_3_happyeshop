@@ -1,3 +1,7 @@
+const path = require('path');
+const fs = require('fs');
+const { json } = require('express');
+
 const controller = {
     index: (req,res) => {
         res.render ('./products/productList')
@@ -16,9 +20,9 @@ const controller = {
 
     create: (req,res) => {
         res.render ('./products/create_product')
-    
-    },
+    }
 
+    
        
 }
 

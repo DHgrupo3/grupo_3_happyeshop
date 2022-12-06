@@ -310,6 +310,12 @@ footer {
 
 /* Navegación en tablets (ancho mínimo 361 px) */
 
+.listaproductos {
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 @media (min-device-width: 361px){
 
 
