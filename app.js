@@ -6,6 +6,8 @@ const path = require('path');
 //Ejecutamos la función y almacenamos el objeto que devuelve en la constante app. Ahora, tenemos accesos a tdoas las propiedades y métodos que nos da express.
 const app = express();
 
+const methodOverride = require('method-override');
+
 //Invoco al modulo nativo path - permite generar rutas de una manera mas comoda en express
 //const path = require('path');
 
@@ -14,6 +16,8 @@ app.use(express.static('public'));
 //app.use(express.static(path.join(__dirname, '../public')));
 
 app.set('view engine', 'ejs');
+app.use(express.urlencoded({extended:false}));
+app.use(methodOverride('_method'));
 app.set('views', path.join(__dirname, '/src/views')); // Define la ubicación de la carpeta de las Vistas
 
 
@@ -29,14 +33,16 @@ app.listen(3000, () => console.log ("Servidor corriendo"));
 const mainRouter = require ('./routes/main');
 const productsRouter = require ('./routes/products');
 const userRouter = require ('./routes/users');
+const adminRouter = require ('./routes/admin');
+const { METHODS } = require('http');
 
 app.use('/', mainRouter);
 
-
 app.use('/products', productsRouter);
 
-
 app.use('/user', userRouter);
+
+app.use('/admin', adminRouter);
 
 
 

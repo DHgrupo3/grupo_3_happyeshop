@@ -2,7 +2,10 @@
 
     box-sizing: border-box;
 }
-
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+}
 
 body{display:flex;
     flex-wrap: wrap;
