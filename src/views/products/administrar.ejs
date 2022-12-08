@@ -30,15 +30,20 @@
         
         <article class="listaproductos">
         <% productos.forEach(producto => { %>
-            <tr>
-                <td><%= producto.id%></td>
-                <td><%= producto.nombre%></td>
-                <td><%= producto.descripcion%></td>
-                <td><%= producto.imagen%></td>
-                <td><%= producto.precio%></td>
-                <td><%= producto.categoria%></td>
-            </tr>
             <% }); %>
+            <% productos.forEach(productos => { %>
+                <%= productos.id%>
+                <%=productos.nombre%>
+                
+            </tr>
+                <tr>
+                    <td><a href="/administrar/detail/<%= productos.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
+                    <td><a href="/administrar/edit/<%= productos.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
+                    <td><a href="/administrar/delete/<%= productos.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
+                </tr>
+                    <%  }); %> 
+
+
         </article>
 
     </main>
