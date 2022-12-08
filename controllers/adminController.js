@@ -10,10 +10,7 @@ const controller = {
       // res.render ('./products/administrar');
     },
 
-    edit: (req,res) => {
-      res.render ('./products/edit_product')
-    },
-
+ 
     newProduct: (req,res) => {
       //res.send("Grabo Datos");
       

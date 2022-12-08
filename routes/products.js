@@ -11,6 +11,7 @@ const productsController = require('../controllers/productsController');
 router.get ('/', productsController.index);
 router.get ('/productDetail', productsController.detail);
 router.get ('/edit_product', productsController.edit);
+router.get ('/delete_product', productsController.delete);
 router.get ('/create_product', productsController.create);
 
 

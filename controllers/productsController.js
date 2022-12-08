@@ -18,7 +18,13 @@ const controller = {
     
     },
 
+    delete: (req,res) => {
+        res.render ('./products/delete_product')
+    
+    },
+
     create: (req,res) => {
+        
         res.render ('./products/create_product')
     }
 
