@@ -11,16 +11,33 @@ const controller = {
     },
 
  
-    newProduct: (req,res) => {
+    //newProduct: (req,res) => {
       //res.send("Grabo Datos");
       
       //Leer el JSON y transformar a objeto literal
-      let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')) );
+      //let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')) );
       //save 
-      res.render(path.resolve(__dirname, '../src/views/products/create_product'),{productos} );
+      //res.render(path.resolve(__dirname, '../src/views/products/create_product'),{productos} );
 
+   // },
+
+    save: (req,res) =>{
+      let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json')) );
+      let ultimoProducto = productos.pop();
+      productos.push(ultimoProducto);
+      let nuevoProducto = {
+        id: ultimoProducto.id +1,
+        nombre: req.body.nombre,
+        descripcion: req.body.descripcion,
+        precio: req.body.precio,
+        descuento: req.body.descuento,
+        imagen: req.body.filename
+      }
+      productos.push(nuevoProducto);
+      let nuevoProductoGuardar = JSON.stringify(productos,null,2);
+      fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), nuevoProductoGuardar);
+      res.redirect('/admin');
     }
-
 };
 
 module.exports = controller;

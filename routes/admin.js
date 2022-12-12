@@ -19,6 +19,6 @@ filename: function (req,file,cb) {
 const upload = multer ({storage});
 
 router.get('/', adminController.index);
-router.post ('/create_product', upload.single('imagen'), adminController.newProduct);
+router.post ('/create_product', upload.single('imagen'), adminController.save);
 
 module.exports = router;
