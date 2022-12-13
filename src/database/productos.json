@@ -38,5 +38,32 @@
     "imagen": "Sales_Minerales.jpg",
     "precio": "$7200",
     "categoria": "En oferta"
+  },
+  {
+    "id": "51"
+  },
+  {
+    "id": 52
+  },
+  {
+    "id": "53"
+  },
+  {
+    "id": 6
+  },
+  {
+    "id": 7,
+    "nombre": "Total",
+    "descripcion": "bbb",
+    "precio": "3",
+    "descuento": "s"
+  },
+  {
+    "id": 8,
+    "nombre": "4",
+    "descripcion": "4",
+    "precio": "4",
+    "descuento": "4",
+    "imagen": "producto1670890080957.jpg"
   }
 ]

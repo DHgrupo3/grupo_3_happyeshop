@@ -21,22 +21,46 @@ const controller = {
 
    // },
 
+    //Guarda los resultados de una creación
     save: (req,res) =>{
       let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json')) );
+      //Obtiene el ultimo elemento
       let ultimoProducto = productos.pop();
+
       productos.push(ultimoProducto);
+
+      let id = parseInt(ultimoProducto.id);
+
       let nuevoProducto = {
-        id: ultimoProducto.id +1,
-        nombre: req.body.nombre,
-        descripcion: req.body.descripcion,
-        precio: req.body.precio,
-        descuento: req.body.descuento,
-        imagen: req.body.filename
+        id: id + 1,
+        nombre: req.body.name,
+        descripcion: req.body.description,
+        precio: req.body.price,
+        descuento: req.body.discount,
+        imagen: req.file.filename
       }
       productos.push(nuevoProducto);
       let nuevoProductoGuardar = JSON.stringify(productos,null,2);
       fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), nuevoProductoGuardar);
       res.redirect('/admin');
+    },
+
+    //Renderiza el formulario de Edición
+    edit: (req,res) => {
+      res.render ('./products/edit_product')
+  
+    },
+
+    //Renderiza el formulario de Borrado
+    delete: (req,res) => {
+        res.render ('./products/delete_product')
+    
+    },
+
+    //Renderiza el formulario de Creación
+    create: (req,res) => {
+        
+        res.render ('./products/create_product')
     }
 };
 
