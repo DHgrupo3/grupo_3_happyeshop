@@ -47,14 +47,43 @@ const controller = {
 
     //Renderiza el formulario de Edición
     edit: (req,res) => {
-      res.render ('./products/edit_product')
-  
+      
+      let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+      // res.render(path.resolve(dirname, '../src/views/products/administrar'), {productos});
+      const productoId = req.params.id;
+      let productoEditar = productos.find(producto=> producto.id == productoId);
+
+      res.render(path.resolve(__dirname,'../src/views/products/edit_product'), {productoEditar});
+    },
+
+    update: (req,res) =>{
+      let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+      res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos});
+      req.body.id = req.params.id;
+      req.body.imagen = req.file ? req.file.filename : req.body.oldImagen; 
+      let productoUpdate = productos.map(producto => {
+        if(producto.id == req.body.id ){
+          return producto = req.body;
+        }
+        return producto;
+      })
+      let productoActualizar = JSON.stringify(productoUpdate, null, 2);
+      fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), productoActualizar);
+        res.redirect('/admin');
     },
 
     //Renderiza el formulario de Borrado
     delete: (req,res) => {
-        res.render ('./products/delete_product')
-    
+
+      let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+      //  res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos});
+      const productoDeleteId = req.params.id;
+      const productosFinal = productos.filter(producto => producto.id != productoDeleteId);
+      let productosGuardar = JSON.stringify(productosFinal, null,2);
+      fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), productosGuardar);
+      
+      res.redirect('/admin');
+       
     },
 
     //Renderiza el formulario de Creación

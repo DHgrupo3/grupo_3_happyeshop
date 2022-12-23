@@ -2,7 +2,7 @@
   {
     "id": "1",
     "nombre": "Espuma Fenolica",
-    "descripción": "Espuma fenólica para multisemillas o semillas pelletizadas, con perforación",
+    "descripcion": "Espuma fenólica para multisemillas o semillas pelletizadas, con perforación",
     "imagen": "Fenolica.jpg",
     "precio": "$1500",
     "categoria": "En oferta"
@@ -10,7 +10,7 @@
   {
     "id": "2",
     "nombre": " Medidor de PH ACME",
-    "descripción": "Medidor portátil digital de PH de alta precisión",
+    "descripcion": "Medidor portátil digital de PH de alta precisión",
     "imagen": "Medidor_PH.jpg",
     "precio": "$6700",
     "categoria": "En oferta"
@@ -18,7 +18,7 @@
   {
     "id": "3",
     "nombre": " Reductor de PH",
-    "descripción": "Reductor de PH para regular el grado de acidez",
+    "descripcion": "Reductor de PH para regular el grado de acidez",
     "imagen": "Reductor_PH.jpg",
     "precio": "$2400",
     "categoria": "Últimos agregados"
@@ -26,7 +26,7 @@
   {
     "id": "4",
     "nombre": "Kit hidropónico",
-    "descripción": "N°2 Sistema de cultivo NFT de 15 macetas, ideal para balcones",
+    "descripcion": "N°2 Sistema de cultivo NFT de 15 macetas, ideal para balcones",
     "imagen": "Sales_Minerales.jpg",
     "precio": "$7200",
     "categoria": "Últimos agregados"
@@ -34,36 +34,17 @@
   {
     "id": "5",
     "nombre": "Sales minerales",
-    "descripción": "Sales minerales para fertilización, etapa de vegetación A,B y C",
+    "descripcion": "Sales minerales para fertilización, etapa de vegetación A,B y C",
     "imagen": "Sales_Minerales.jpg",
     "precio": "$7200",
     "categoria": "En oferta"
   },
   {
-    "id": "51"
-  },
-  {
-    "id": 52
-  },
-  {
-    "id": "53"
-  },
-  {
-    "id": 6
-  },
-  {
-    "id": 7,
-    "nombre": "Total",
-    "descripcion": "bbb",
-    "precio": "3",
-    "descuento": "s"
-  },
-  {
-    "id": 8,
-    "nombre": "4",
-    "descripcion": "4",
-    "precio": "4",
-    "descuento": "4",
-    "imagen": "producto1670890080957.jpg"
+    "id": 6,
+    "nombre": "Iphone",
+    "descripcion": "PPP",
+    "precio": "3000",
+    "descuento": "EcoChallenge",
+    "imagen": "producto1671762470722.png"
   }
 ]
