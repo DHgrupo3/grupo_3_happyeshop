@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nombre": "Carlos",
+        "apellido": "Gimenez",
+        "email": "Carlosg@gmail.com",
+        "contraseña": "Callefalsa123",
+        "categoria": 1,
+        "imagen": "avatar.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Lucia",
+        "apellido": "Lima",
+        "email": "LuciaLima@yahoo.com.ar",
+        "contraseña": "9999",
+        "categoria": 2,
+        "imagen": "lisa.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Diego",
+        "apellido": "Toledo",
+        "email": "Dieguito12@outlook.com",
+        "contraseña": "Diego10",
+        "categoria": 3,
+        "imagen": "carpincho.jpg"
+    }
+
+] 

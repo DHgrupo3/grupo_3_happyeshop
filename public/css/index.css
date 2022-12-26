@@ -308,6 +308,10 @@ footer {
     text-align:center;
 }
 
+footer a{
+    color: black;
+}
+
 /* Navegación en tablets (ancho mínimo 361 px) */
 
 .listaproductos {

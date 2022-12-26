@@ -159,6 +159,9 @@ footer {
     flex-direction: column;
     text-align:center;
 }
+footer a{
+    color: black;
+}
 
  
 @media (min-device-width: 361px){

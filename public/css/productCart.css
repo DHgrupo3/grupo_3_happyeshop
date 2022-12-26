@@ -442,6 +442,9 @@ footer {
             margin-top: 20px;
             flex-direction: row;
         }
+        footer a{
+            color: black;
+        }
         .icons{
             padding: 5px;
             border-radius: 10px;
