@@ -41,8 +41,9 @@
                 <thead class="table_product">
                     <th scope="col">Id</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Borrar</th>
+                    <th scope="col">Ver</th> 
+                    <th scope="col">Editar</th> 
+                    <th scope="col">Borrar</th> 
                 </thead>
                 <tbody>
             <% productos.forEach(productos => { %>
@@ -50,8 +51,9 @@
                     <td><%= productos.id%>&nbsp;&nbsp;&nbsp;</td>
                     <td><%= productos.nombre%>&nbsp;&nbsp;&nbsp;</td>
                     <!--  -->
-                    <td><a href="/admin/edit_product/<%= productos.id%>"> &nbsp;<i class="fa-solid fa-pencil"></i></a></td>
-                    <td><a href="/admin/delete_product/<%= productos.id%>"> &nbsp;<i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="/admin/productDetail/<%= productos.id%>"> <i class="fa-solid fa-eye"></i></a>&nbsp;&nbsp;</td>
+                    <td><a href="/admin/edit_product/<%= productos.id%>"> <i class="fa-solid fa-pencil"></i></a>&nbsp;</td>
+                    <td><a href="/admin/delete_product/<%= productos.id%>"><i class="fa-solid fa-trash"></i></a> &nbsp;</td>
                 </tr>
             
             <%  }); %>

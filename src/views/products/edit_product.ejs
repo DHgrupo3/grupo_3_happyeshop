@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div >
-                <form action="/products/edit_product/<%= productoEditar.id%>?_method=PUT" method="POST">
+                <form action="/products/edit_product/<%= productoEditar.id%>?_method=POST" method="POST" enctype="multipart/form-data">
                     <div >
                         <div >
                             <label for="name" >Nombre del producto:</label>
@@ -69,7 +69,8 @@
                           </div>
 
                         <div >
-                            <button type="submit" >Guardar producto</button>
+                            <button type="submit">Guardar producto</button>
+                            <a href="/admin">Volver</a>
                         </div>
                     </div>
                 </form>

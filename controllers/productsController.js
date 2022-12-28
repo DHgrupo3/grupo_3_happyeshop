@@ -14,7 +14,7 @@ const controller = {
         res.render ('./products/productDetail')
     
     },
-    
+
 }
 
 module.exports = controller;

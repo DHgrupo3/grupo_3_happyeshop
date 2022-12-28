@@ -10,13 +10,13 @@ const controller = {
       // res.render ('./products/administrar');
     },
 
- 
+
     //newProduct: (req,res) => {
       //res.send("Grabo Datos");
-      
+
       //Leer el JSON y transformar a objeto literal
       //let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')) );
-      //save 
+      //save
       //res.render(path.resolve(__dirname, '../src/views/products/create_product'),{productos} );
 
    // },
@@ -47,7 +47,7 @@ const controller = {
 
     //Renderiza el formulario de Edición
     edit: (req,res) => {
-      
+
       let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
       // res.render(path.resolve(dirname, '../src/views/products/administrar'), {productos});
       const productoId = req.params.id;
@@ -57,10 +57,11 @@ const controller = {
     },
 
     update: (req,res) =>{
+
       let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
       res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos});
       req.body.id = req.params.id;
-      req.body.imagen = req.file ? req.file.filename : req.body.oldImagen; 
+      req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
       let productoUpdate = productos.map(producto => {
         if(producto.id == req.body.id ){
           return producto = req.body;
@@ -81,16 +82,27 @@ const controller = {
       const productosFinal = productos.filter(producto => producto.id != productoDeleteId);
       let productosGuardar = JSON.stringify(productosFinal, null,2);
       fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), productosGuardar);
-      
+
       res.redirect('/admin');
-       
+
     },
 
     //Renderiza el formulario de Creación
     create: (req,res) => {
-        
+
         res.render ('./products/create_product')
-    }
-};
+    },
+mostrar: (req,res) =>{
+  let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+  let miProducto;
+  productos.forEach(producto => {
+      if(producto.id == req.params.id){
+          miProducto = producto;
+      }
+  });
+  res.render(path.resolve(__dirname,'../src/views/products/productDetail'), {miProducto})
+},
+}
+
 
 module.exports = controller;
