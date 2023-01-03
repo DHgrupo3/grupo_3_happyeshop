@@ -11,4 +11,6 @@ const productsController = require('../controllers/productsController');
 router.get ('/', productsController.index);
 router.get ('/productDetail', productsController.detail);
 
+
+
 module.exports = router;

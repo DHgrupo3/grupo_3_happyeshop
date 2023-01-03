@@ -38,13 +38,5 @@
     "imagen": "Sales_Minerales.jpg",
     "precio": "$7200",
     "categoria": "En oferta"
-  },
-  {
-    "id": 6,
-    "nombre": "Iphone",
-    "descripcion": "PPP",
-    "precio": "3000",
-    "descuento": "EcoChallenge",
-    "imagen": "producto1671762470722.png"
   }
 ]

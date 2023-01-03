@@ -11,6 +11,9 @@ const controller = {
     contact: (req,res) => {
         res.render ('./users/contactanos')
     },
+    terminos: (req,res) => {
+        res.render ('./terminos')
+    },
 
 }
 
