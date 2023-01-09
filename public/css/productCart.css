@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    padding: 0;
+    /* padding: 0; */
     margin: 0;
 }
 body{
@@ -55,14 +55,15 @@ footer {
 
 
 
-.barra{
-    height: 120px;
+.barra {
+    
     display: none;
     flex-wrap: wrap;
     justify-content:space-around;
     background-color: #17252A;
     align-items: top;
-    width:99vw;
+    width: 60%;
+    height: 20%;
     border-radius: 10px;
 
 }
@@ -88,6 +89,12 @@ footer {
 .up:hover{
     background-color: #2B7A78;
 }
+.logo {
+    /* display: flex; */
+    width: 20%;
+    height: 20%;
+    /* justify-content: left; */
+} 
 
 .imagenlogo{
     width: 12vw;
@@ -119,6 +126,7 @@ footer {
     background-size: cover;
     background-repeat: repeat;
 }
+
 
 .burger-menu{
     background-color: #90e093;
@@ -252,6 +260,14 @@ footer {
   
 }
 
+.product-add-cart {
+    width: 100%;
+    font-size: 14px;
+    color: green;
+    text-align: center;
+    padding: 5px;
+}
+
 /* @media(min-width:361px){
     .descripcion{
         font-size: 16px;
@@ -299,12 +315,38 @@ footer {
             padding: 15px;
         }
     
-        .barra{
+        .barra {
+            height: 120px;
             display: flex;
-            flex-wrap: nowrap;
-            justify-content: space-around;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content:space-around;
+            background-color: #17252A;
+            align-items: top;
+            width:135vw;
+            border-radius: 10p
+    
         }
+        /*#121C84*/
+.up{
+    width: 15vw;
+    height:50px;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    transition:all 400ms;
+    background-color: #17252A;
+    border-radius:10px;
+    outline:none;
+    justify-content:space-around;
+    margin-top: 10px;
+    border:none;
+
+}
+
+.up:hover{
+    background-color: #2B7A78;
+}
+    
     
         .up{
             margin: auto;
