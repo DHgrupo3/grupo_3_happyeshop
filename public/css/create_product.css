@@ -1,8 +1,300 @@
+* {
+
+    box-sizing: border-box;
+}
+
+
 body{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    background-color: #3AAFA9;
+    background-size: cover;
+    background-repeat: repeat;
+    
     font-family: 'Roboto', sans-serif;
     font-size: 12px;
 }
 
+.barra {
+    
+    display: none;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    background-color: #17252A;
+    align-items: top;
+    width: 60%;
+    height: 20%;
+    border-radius: 10px;
+
+}
+
+.space {
+    width: 60%;
+}
+
+/*#121C84*/
+.up{
+    width: 15vw;
+    height:50px;
+    font-size: 18px;
+    font-family: 'Noto Sans', sans-serif;
+    color: white;
+    transition:all 400ms;
+    background-color: #17252A;
+    border-radius:10px;
+    outline:none;
+    justify-content:space-around;
+    margin-top: 10px;
+    border:none;
+
+}
+
+.up:hover{
+    background-color: #2B7A78;
+}
+
+.formulario{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    background-color: #2B7A78;
+    width:25vw;
+    margin: 35px;
+    height:50vh;
+    border-radius: 20px;
+    border: solid 5px #DEF2F1;
+
+}
+.bienvenido{
+    font-size: 50px;
+    font-family: 'Noto Sans', sans-serif;
+    color: black;
+    position: relative;
+    top:10px;
+}
+.formin{
+    height:30px;
+    width:250px;
+    font-size: 18px;
+    color: black;
+    background-color: #DEF2F1;
+    position:relative;
+    bottom:45px;
+    border-radius: 5px;
+}
+.formin1{
+    height:30px;
+    width:250px;
+    font-size: 18px;
+    color: black;
+    background-color: #DEF2F1;
+    position:relative;
+    bottom:45px;
+    border-radius: 5px;
+}
+.iniciosesion{
+    height:50px;
+    width:150px;
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    color:white;
+    background-color: #121C84;
+    border-radius: 7px;
+    transition:all 400ms;
+    position:relative;
+    bottom:50px
+}
+
+.iniciosesion:hover{
+    background-color: #0D50A9;
+}
+
+.olvidarcontra{border-radius: 5px;
+    outline:none;
+    background:none;
+    border:none;
+    color:#121C84;
+    position:relative;
+    bottom:40px
+}
+.olvidarcontra:hover{
+    color:#0D50A9;
+}
+
+.logo {
+    /* display: flex; */
+    width: 20%;
+    height: 20%;
+    /* justify-content: left; */
+} 
+
+.imagenlogo {
+    /* display: flex; */
+    width: 20vw;
+    height: 20vh;
+    padding: 10px;
+    object-fit:contain;
+    /* justify-content: left; */
+}
+
+.burger-menu{
+    display: flex;
+    width: 20%;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger {
+    background-color: #90e093;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+.main-header {
+    display: flex;
+    width: 100%;
+    background-color: #3AAFA9;
+    /* justify-content:end; */
+}
+
+/* Detalle de Productos Hidropónicos en Happy e Shop */
+
+.products {
+    border: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.product {
+        
+        /* Nos piden que la misma tenga un borde superior de 1 píxel, línea sólida y color #ebebeb. */
+        border-top: solid 1px #ebebeb;
+        /*  Entre cada artículo hay una separación de 10 píxeles. */
+        margin-bottom: 5px;
+        text-align: center;
+        background-color: lightgrey;
+        /* Debe tener separado el contenido de sus bordes en 15 píxeles en cada uno de sus lados. */
+        padding: 15px;
+        border-bottom:  solid 10px #ebebeb;
+        border: solid 20px rgba(0, 0, 0, 0);
+        transition: all 450ms;
+        width: 95%;
+        margin: 5px;
+        justify-content: center;
+
+}
+
+
+
+.product-img {
+
+    /* object-fit: cover; */
+    /* display: flex; */
+    padding: 2px;
+    border: 2px;
+    width: 100%;
+    background-color: grey;
+    color: white;
+    
+}
+
+.product-container-info {
+
+    /* Lograr que el precio y el descuento de los artículos estén en el mismo renglón, */
+    /* display: flex; */
+    border-top: 1px solid #ebebeb;
+    padding: 2px;
+    width: 100%;
+    
+}
+
+.product-price {
+    font-size: 18px;
+    padding: 2px;
+    width: 100%;
+}
+
+.product-name {
+
+    width: 100%;
+    font-size: 18px;
+    color: grey;
+    text-align: center;
+    padding: 2px;
+}
+
+.main-home-banner {
+    object-fit: cover; 
+    width: 100% ;
+    height: 20vh; 
+    padding: 10px;
+    object-fit:contain;
+    border-radius: 8px; 
+       
+}
+
+.product-container-add {
+
+    border-top: 1px solid green;
+}
+
+.product-add-cart {
+    width: 100%;
+    font-size: 14px;
+    color: green;
+    text-align: center;
+    padding: 2px;
+}
+
+/* Fin Detalle de Productos Hidropónicos en Happy e Shop */
+
+
+.main-title-last-visit {
+    font-size: 24px;
+    font-weight: bold;
+    color: #666;
+    width: 100%;
+    text-align: center;
+}
+
+/* .main-footer {
+    
+    text-align: center;
+}
+
+.main-footer-ads {
+    
+    padding: 5px;
+    list-style: none;
+}
+
+.main-footer-ad {
+    padding: 5px;
+    font-size: 16px;
+    color: grey;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main-footer-ad-desc {
+    font-size: 14px;
+    padding: 0px 30px 0px;
+
+}
+
+.main-footer-copyright {
+    font-size: 12px;
+    padding: 15px 0px 0px 5px;
+    text-align: left;
+} */
 footer {
     display: flex;
     justify-content: space-around;
@@ -15,35 +307,52 @@ footer {
     flex-direction: column;
     text-align:center;
 }
+
 footer a{
     color: black;
 }
 
+/* Navegación en tablets (ancho mínimo 361 px) */
 
-
-@media (min-device-width: 361px){
-    footer {
-        display: flex;
-        justify-content: space-evenly;
-        background-color: #90e093;
-        width: 100%;
-        padding: 5px;
-        border-radius: 10px;
-        font-size: 16px;
-        margin-top: 20px;
-        flex-direction: row;
-    }
-    .icons{
-        padding: 5px;
-        border-radius: 10px;
-        font-size: 14px;
-        margin-top: -1px;
-        text-align: center;
-    }
-    
+.listaproductos {
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-@media (min-device-width: 769px){
+@media (min-device-width: 361px){
+
+
+    body{
+        /* Estructura del menu */
+        align-items: center;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .barra {
+        height: 120px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:space-around;
+        background-color: #17252A;
+        align-items: top;
+        width:135vw;
+        border-radius: 10p
+
+    }
+
+    .product {
+        /* Agregar box-shadow. Para los dispositivos tablet o de resoluciones superiores, */
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        /* Aplicando Flexbox, dos artículos para tablet */
+        /* flex-grow: 0.5; */
+        max-width: 50%;
+        /* flex-wrap: nowrap;  */
+
+    }
     footer {
         display: flex;
         justify-content: space-evenly;
@@ -62,4 +371,46 @@ footer a{
         margin-top: -1px;
         text-align: center;
     }
+    .banner{
+        max-width: 100vw;
+    }
+
+}
+
+/* Navegación en desktop (ancho mínimo 769 px) */
+@media (min-device-width: 769px){
+
+    /* Para las versiones desktop y tablet mostrar el site y login navbar, pero ocultar la imagen del menú hamburguesa. */
+
+    .product {
+        /* Agregar box-shadow. Para los dispositivos tablet o de resoluciones superiores, */
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+        /* Aplicando Flexbox, cuatro artículos para escritorio */
+        /* flex-grow: 0.25; */
+        max-width: 25%;
+        /* flex-wrap: nowrap; */
+    }
+    footer {
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #90e093;
+        width: 100%;
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 16px;
+        margin-top: 20px;
+        flex-direction: row;
+    }
+    .icons{
+        padding: 5px;
+        border-radius: 10px;
+        font-size: 14px;
+        margin-top: -1px;
+        text-align: center;
+    }
+    .banner{
+        width: 100%;
+
+    }
+    
 }
