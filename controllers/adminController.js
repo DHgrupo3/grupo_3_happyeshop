@@ -35,10 +35,11 @@ const controller = {
         id: id + 1,
         nombre: req.body.name,
         descripcion: req.body.description,
+        imagen: req.file.filename,
         precio: req.body.price,
-        descuento: req.body.discount,
-        imagen: req.file.filename
+        categoria: req.body.category,
       }
+
       productos.push(nuevoProducto);
       let nuevoProductoGuardar = JSON.stringify(productos,null,2);
       fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), nuevoProductoGuardar);
@@ -59,18 +60,28 @@ const controller = {
     update: (req,res) =>{
 
       let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
-      res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos});
+      //res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos});
+
       req.body.id = req.params.id;
       req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
       let productoUpdate = productos.map(producto => {
         if(producto.id == req.body.id ){
-          return producto = req.body;
+           
+          return producto = {
+            id: req.body.id,
+              nombre: req.body.name,
+              descripcion: req.body.description,
+              imagen: req.file.filename,
+              precio: req.body.price,
+              categoria: req.body.category
+          }
         }
         return producto;
-      })
+       })
+
       let productoActualizar = JSON.stringify(productoUpdate, null, 2);
       fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), productoActualizar);
-        res.redirect('/admin');
+      res.redirect('/admin');
     },
 
     //Renderiza el formulario de Borrado

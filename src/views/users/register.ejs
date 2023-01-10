@@ -19,20 +19,21 @@
         <div class="mainContent">
         <section class="registerMainFoto"><img src="/img/hidroponia.png" class="registerFoto"></section>
         <section class="registerSection">
-            <form class="register" action="/" method="GET">
+            <form method="POST" action="/register" enctype="multipart/form-data">
                     <ul>
-                    <li><input type="text" name="name"  placeholder="Nombre y Apellido" required/></li>
+                    <li><input type="text" name="fullname"  placeholder="Nombre y Apellido" required/></li>
                     <br>
                     <li><input type="email" name="email" placeholder="email"/></li>
                     <br>
-                    <li><input type="date" name="nacimiento" /></li>
+                    <li><input type="text" name="contraseña" placeholder="Contraseña"/></li>
                     <br>
-                    <li><input type="text" name="domicilio" placeholder="Domicilio:"/></li>
+                    <li><input type="text" name="pais" placeholder="Pais"/></li>
                     <br>
-                    <li><input type="text" name="ciudad" placeholder="Ciudad:"/></li>
+                    <li><input type="file" name="avatar" placeholder="Avatar"/></li>
                     <br>
-                    <li><input type="text" name="pais" placeholder="Pais:"/></li>
-                    <br>
+                    <div >
+                        <button type="submit" >Enviar</button>
+                    </div>
             </form>
         </section>
         </div>
