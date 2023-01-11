@@ -33,10 +33,18 @@
   },
   {
     "id": "5",
-    "nombre": "Sales minerales",
-    "descripcion": "Sales minerales para fertilización, etapa de vegetación A,B y C",
-    "imagen": "Sales_Minerales.jpg",
-    "precio": "$7200",
+    "nombre": "Lechuga Mantecosa (Semillas)",
+    "descripcion": "Semillas de Primera",
+    "imagen": "producto1673386596964.jpeg",
+    "precio": "2450",
     "categoria": "En oferta"
+  },
+  {
+    "id": 6,
+    "nombre": "Lechuga Especial",
+    "descripcion": "Semillas Lechuga Especial",
+    "imagen": "producto1673394608214.jpeg",
+    "precio": "1230",
+    "categoria": "in-sale"
   }
 ]

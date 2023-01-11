@@ -1,3 +1,8 @@
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
+const {json} = require('express');
+
 const controller = {
     
     register: (req,res) => {
@@ -14,6 +19,19 @@ const controller = {
     terminos: (req,res) => {
         res.render ('./terminos')
     },
+    //Guarda los resultados de una creación
+    save: (req,res)=>{
+        const resultValidation = validationResult(req);
+		
+		if (resultValidation.errors.length > 0) {
+			return res.render('register', {
+				errors: resultValidation.mapped(),
+				oldData: req.body
+			});
+		}
+
+		return res.send('Ok, las validaciones se pasaron y no tienes errores');
+	},
 
 }
 

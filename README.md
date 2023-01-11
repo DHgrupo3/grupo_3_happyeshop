@@ -2,7 +2,7 @@ Happy Shop es una solución eCommerce para la Venta Directa de insumos hidropón
 
 Una vez finalizado el envío, Happy Shop te lo envía en 48hs
 
-Los sitios de referencia seleccionados son los siguientes:
+Los sitios de referencia seleccionados son los siguientes
 
 - <https://verdealcubo.com/>
 - <https://www.delaguavenimos.com/>

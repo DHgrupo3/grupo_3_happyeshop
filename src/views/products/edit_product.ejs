@@ -27,33 +27,16 @@
                 </div>
             </div>
             <div >
-                <form action="/products/edit_product/<%= productoEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/admin/edit_product/<%= productoEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div >
                         <div >
                             <label for="name" >Nombre del producto:</label>
                             <input type="text" id="name" name="name" placeholder="Ej: Hidro Total" class="form-input" value="<%= productoEditar.nombre%>">
                         </div>
                         <div >
-                            <label for="price" >Precio del producto:</label>
-                            <input type="text" id="price" name="price" placeholder="Ej: 2400" value="<%= productoEditar.precio%>" >
-                        </div>
-                        <div>
-                            <label for="category" >Categoría:</label>
-                            <select name="category" id="category" >
-                                <option value="">Elegí</option>
-                                <option value="in-sale"<%= (productoEditar.categoria == "En oferta") ? "selected": null %>>En oferta</option>
-                                <option value="visited"<%= (productoEditar.categoria == "últimos agregados") ? "selected": null %>>Últimos agregados</option>
-                            </select>
-                        </div>
-                        <div >
                             <label for="description" >Descipción:</label>
-                            <textarea name="description" id="description" value="<%= productoEditar.descripcion%>"></textarea>
+                            <textarea name="description" id="description" placeholder="<%= productoEditar.descripcion%>"></textarea>
                         </div>
-                        <!-- <div >
-                            <label for="imagen" >Imagen:</label>
-                            <input type="file" name="imagen" value="..."></input>
-                            
-                        </div> -->
 
                         <!--Aquí solicito la imagen-->
                         <div class="custom-file">
@@ -62,12 +45,25 @@
                             </figure>
                             <input type="hidden"  name="oldImagen"  value="<%= productoEditar.imagen%>">
                             <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
-                            <input type="file" name="imagen" >
+                            <input type="file" name="imagen" value="<%= productoEditar.imagen%>" required> 
                             <!--<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="imagen" required value=""> 
 
                             <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen...</label>-->
                           </div>
 
+                        <div >
+                            <label for="price" >Precio del producto:</label>
+                            <input type="text" id="price" name="price" placeholder="Ej: 2400" value="<%= productoEditar.precio%>" >
+                        </div>
+                        <div>
+                            <label for="category" >Categoría:</label>
+                            <select name="category" id="category" >
+                                <option value="">Elegí</option>
+                                <option value="En oferta"<%= (productoEditar.categoria == "En oferta") ? "selected": null %>>En oferta</option>
+                                <option value="Últimos agregados"<%= (productoEditar.categoria == "Últimos agregados") ? "selected": null %>>Últimos agregados</option>
+                            </select>
+                        </div>
+              
                         <div >
                             <button type="submit">Guardar producto</button>
                             <a href="/admin">Volver</a>
