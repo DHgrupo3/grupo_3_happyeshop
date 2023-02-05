@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/register.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <script src="https://kit.fontawesome.com/63355f2aa7.js" crossorigin="anonymous"></script>
@@ -17,23 +17,19 @@
     <%- include ("../partials/header") %>
     <main>
         <div class="mainContent">
-        <section class="registerMainFoto"><img src="/img/hidroponia.png" class="registerFoto"></section>
+        <!-- <section class="registerMainFoto"><img src="/img/hidroponia.png" class="registerFoto"></section> -->
         <section class="registerSection">
-            <form method="POST" action="/register" enctype="multipart/form-data">
-                    <ul>
-                    <li><input type="text" name="fullname"  placeholder="Nombre y Apellido" required/></li>
-                    <br>
-                    <li><input type="email" name="email" placeholder="email"/></li>
-                    <br>
-                    <li><input type="text" name="contraseña" placeholder="Contraseña"/></li>
-                    <br>
-                    <li><input type="text" name="pais" placeholder="Pais"/></li>
-                    <br>
-                    <li><input type="file" name="avatar" placeholder="Avatar"/></li>
-                    <br>
-                    <div >
-                        <button type="submit" >Enviar</button>
-                    </div>
+            <form method="POST" action="/user/register" enctype="multipart/form-data">
+                    
+                    <ul><input type="text" name="nombre" placeholder="Nombre" required/></ul>
+                    <ul><input type="text" name="apellido" placeholder="Apellido" required/></ul>
+                    <ul><input type="email" name="email" placeholder="email"/></ul>
+                    <ul><input type="text" name="contraseña" placeholder="Contraseña"/></ul>
+                    <ul><input type="text" name="pais" placeholder="Pais"/></ul>
+                    <ul><input type="file" name="avatar" placeholder="Avatar"/></ul>
+                    
+                    <button type="submit" >Enviar</button>
+                    
             </form>
         </section>
         </div>

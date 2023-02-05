@@ -1,30 +1,65 @@
 [
-    {
-        "id": 1,
-        "nombre": "Carlos",
-        "apellido": "Gimenez",
-        "email": "Carlosg@gmail.com",
-        "contraseña": "Callefalsa123",
-        "categoria": 1,
-        "imagen": "avatar.png"
-    },
-    {
-        "id": 2,
-        "nombre": "Lucia",
-        "apellido": "Lima",
-        "email": "LuciaLima@yahoo.com.ar",
-        "contraseña": "9999",
-        "categoria": 2,
-        "imagen": "lisa.jpg"
-    },
-    {
-        "id": 3,
-        "nombre": "Diego",
-        "apellido": "Toledo",
-        "email": "Dieguito12@outlook.com",
-        "contraseña": "Diego10",
-        "categoria": 3,
-        "imagen": "carpincho.jpg"
-    }
-
-] 
+ {
+  "id": 1,
+  "nombre": "Carlos",
+  "apellido": "Gimenez",
+  "email": "Carlosg@gmail.com",
+  "contraseña": "Callefalsa123",
+  "categoria": 1,
+  "imagen": "avatar.png"
+ },
+ {
+  "id": 2,
+  "nombre": "Lucia",
+  "apellido": "Lima",
+  "email": "LuciaLima@yahoo.com.ar",
+  "contraseña": "9999",
+  "categoria": 2,
+  "imagen": "lisa.jpg"
+ },
+ {
+  "id": 3,
+  "nombre": "Diego",
+  "apellido": "Toledo",
+  "email": "Dieguito12@outlook.com",
+  "contraseña": "Diego10",
+  "categoria": 3,
+  "imagen": "carpincho.jpg"
+ },
+ {
+  "id": 4,
+  "nombre": "Emilio",
+  "apellido": "Buzzi",
+  "email": "enbuzzi@outlook.com",
+  "contraseña": "1234",
+  "categoria": 3,
+  "imagen": "Iguana.jpg"
+ },
+ {
+  "id": 5,
+  "nombre": "Emilio",
+  "apellido": "Buzzi",
+  "email": "enbuzzi@outlook.com",
+  "contraseña": "1234",
+  "categoria": 3,
+  "imagen": "Iguana.jpg"
+ },
+ {
+  "id": 6,
+  "nombre": "Emilio",
+  "apellido": "Buzzi",
+  "email": "enbuzzi@outlook.com",
+  "contraseña": "1234",
+  "categoria": 3,
+  "imagen": "Iguana.jpg"
+ },
+ {
+  "id": 7,
+  "nombre": "Mateo",
+  "apellido": "Buzzi",
+  "email": "mbr@gmail.com",
+  "contraseÃ±a": "1234",
+  "pais": "Argentina",
+  "imagen": "user1675633865925.jpg"
+ }
+]

@@ -1,7 +1,11 @@
+
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const {json} = require('express');
+//const { all } = require('../routes/users');
+
+const User = require('../src/models/user.js');
 
 const controller = {
     
@@ -19,16 +23,29 @@ const controller = {
     terminos: (req,res) => {
         res.render ('./terminos')
     },
+
     //Guarda los resultados de una creación
     save: (req,res)=>{
-        const resultValidation = validationResult(req);
+
+        //Reviso que es lo que recibo
+        console.log(req.body, req.file);
+
+        ////  No esta definido  validationResult y es por eso que da error
+        // const resultValidation = validationResult(req);
 		
-		if (resultValidation.errors.length > 0) {
-			return res.render('register', {
-				errors: resultValidation.mapped(),
-				oldData: req.body
-			});
-		}
+		// if (resultValidation.errors.length > 0) {
+		// 	return res.render('./users/register', {
+		// 		errors: resultValidation.mapped(),
+		// 		oldData: req.body
+		// 	});
+		// }
+
+        let userToCreate = {
+            ...req.body,
+            imagen: req.file.filename
+        }
+
+        User.create(userToCreate);
 
 		return res.send('Ok, las validaciones se pasaron y no tienes errores');
 	},
