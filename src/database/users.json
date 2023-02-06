@@ -61,5 +61,14 @@
   "contraseÃ±a": "1234",
   "pais": "Argentina",
   "imagen": "user1675633865925.jpg"
+ },
+ {
+  "id": 8,
+  "nombre": "Juan",
+  "apellido": "Perez",
+  "email": "jp@gmail.com",
+  "contraseÃ±a": "1234",
+  "pais": "Argentina",
+  "imagen": "user1675715191461.JPG"
  }
 ]
