@@ -21,12 +21,42 @@
         <section class="registerSection">
             <form method="POST" action="/user/register" enctype="multipart/form-data">
                     
-                    <ul><input type="text" name="nombre" placeholder="Nombre" required/></ul>
-                    <ul><input type="text" name="apellido" placeholder="Apellido" required/></ul>
-                    <ul><input type="email" name="email" placeholder="email"/></ul>
-                    <ul><input type="text" name="contraseña" placeholder="Contraseña"/></ul>
-                    <ul><input type="text" name="pais" placeholder="Pais"/></ul>
-                    <ul><input type="file" name="avatar" placeholder="Avatar"/></ul>
+                    <ul><input type="text" name="nombre" placeholder="Nombre" value= "<%= locals.oldData ? oldData.nombre : null %>"/></ul>
+                    <% if (locals.errors && errors.nombre){ %>
+                    <div>
+                    <%= errors.nombre.msg %>
+                    </div>
+                        <% } %>
+                    <ul><input type="text" name="apellido" placeholder="Apellido" value= "<%= locals.oldData ? oldData.apellido : null %>" /></ul>
+                    <% if (locals.errors && errors.apellido){ %>
+                        <div>
+                        <%= errors.apellido.msg %>
+                        </div>
+                            <% } %>
+                    <ul><input type="email" name="email" placeholder="email" value= "<%= locals.oldData ? oldData.email : null %>"/></ul>
+                    <% if (locals.errors && errors.email){ %>
+                        <div>
+                        <%= errors.email.msg %>
+                        </div>
+                            <% } %>
+                    <ul><input type="text" name="password" placeholder="Password"/></ul>
+                    <% if (locals.errors && errors.password){ %>
+                        <div>
+                        <%= errors.password.msg %>
+                        </div>
+                            <% } %>
+                    <ul><input type="text" name="pais" placeholder="Pais" value= "<%= locals.oldData ? oldData.pais : null %>"/></ul>
+                    <% if (locals.errors && errors.pais){ %>
+                        <div>
+                        <%= errors.pais.msg %>
+                        </div>
+                            <% } %>
+                    <ul><input type="file" name="avatar" placeholder="Avatar" /></ul>
+                    <% if (locals.errors && errors.avatar){ %>
+                        <div>
+                        <%= errors.avatar.msg %>
+                        </div>
+                            <% } %>
                     
                     <button type="submit" >Enviar</button>
                     
