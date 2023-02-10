@@ -5,7 +5,7 @@
   "apellido": "Gimenez",
   "email": "Carlosg@gmail.com",
   "password": "Callefalsa123",
-  "categoria": 1,
+  "pais": 1,
   "imagen": "avatar.png"
  },
  {
@@ -14,7 +14,7 @@
   "apellido": "Lima",
   "email": "LuciaLima@yahoo.com.ar",
   "password": "9999",
-  "categoria": 2,
+  "pais": 2,
   "imagen": "lisa.jpg"
  },
  {
@@ -23,7 +23,7 @@
   "apellido": "Toledo",
   "email": "Dieguito12@outlook.com",
   "password": "Diego10",
-  "categoria": 3,
+  "pais": 3,
   "imagen": "carpincho.jpg"
  },
  {
@@ -32,7 +32,7 @@
   "apellido": "Buzzi",
   "email": "enbuzzi@outlook.com",
   "password": "1234",
-  "categoria": 3,
+  "pais": 3,
   "imagen": "Iguana.jpg"
  },
  {
@@ -41,7 +41,7 @@
   "apellido": "Buzzi",
   "email": "enbuzzi@outlook.com",
   "password": "1234",
-  "categoria": 3,
+  "pais": 3,
   "imagen": "Iguana.jpg"
  },
  {
@@ -50,7 +50,7 @@
   "apellido": "Buzzi",
   "email": "enbuzzi@outlook.com",
   "password": "1234",
-  "categoria": 3,
+  "pais": 3,
   "imagen": "Iguana.jpg"
  },
  {

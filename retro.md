@@ -51,7 +51,8 @@ Nos lanzamos a migrar todo lo hecho con base en JSON a Base de Datos. Actualizam
 
 Bases de datos y Sequelize
 
-- Avanzamos con la migración 
+- Avanzamos con la instalación, configuración y modelo de datos. Creamos el archivo ..database\database.md con todo lo aprendido en cuenta a secuencia de pasos para lograr tener una visión unica de como lo encaramos. (Lección aprendida de Springs anteriores)
+
 
 
 SPRINT 7
