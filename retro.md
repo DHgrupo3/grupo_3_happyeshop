@@ -51,6 +51,7 @@ Nos lanzamos a migrar todo lo hecho con base en JSON a Base de Datos. Actualizam
 
 Bases de datos y Sequelize
 
+- Avanzamos con la migración 
 
 
 SPRINT 7
