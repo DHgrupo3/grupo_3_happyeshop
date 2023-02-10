@@ -27,3 +27,35 @@ Nos encontramos con los siguientes puntos para destacar:
 - Buscamos consolidar Trello como herramienta de seguimiento.
 - Canalizaremos las dudas técnicas con el equipo docente.
 - Dada la etapa del año vemos que los compromisos sociales y laborales impactan en la dinámica de cursa y realización de actividades en Playground.
+
+
+SPRINT 5
+--------
+
+Durante este Sprint identificamos que la dinamica del equipo no cumplia con lo requerido para atender los tiempos del proyecto. Los meses de Diciembre, Enero y Febrero nos juegan en contra por los distintos compromisos personales. Uno de los miembros del equipo es reasignado a otro proyecto quedandos solo dos integrantes. Generamos una reunion con los profesores y acordamos avanzar con los entregables siguiendo lo planteado en cada Spring buscando ponernos al día.  Actualizamos el tablrero de Trabajo en Trello (https://trello.com/b/xhm3jenA/ecommerce-venta-directa)
+
+- Avanzamos con Usuarios y middlewares
+    - Implementamos la entidad de usuarios sin inconvenientes
+    - Implementamos el registro de usuarios con algunas consultantes y entendimiento tecnico sobre validaciones
+    - Implementamos el login de usuarios con algunas consultantes y entendimiento tecnico sobre validaciones
+    - Implementamos la función de recordar al usuario basándonos en Cookies
+    - Implementamos rutas de huéspedes y de usuarios con algunas consultas técnicas
+
+Al cierre de estas actividades, acordamos entre los integrantes del equipo dividirnos las actividades uno avanzará con el cierre de este Sprint y el otro avanzará con las actividades de la base de datos.
+
+
+SPRINT 6
+--------
+
+Nos lanzamos a migrar todo lo hecho con base en JSON a Base de Datos. Actualizamos el archivo retro.md con el resultado de la retrospectiva buscando destacar los grandes hitos, problemas y potenciales soluciones que encontramos. Actualizamos el tablrero de Trabajo en Trello (https://trello.com/b/xhm3jenA/ecommerce-venta-directa)
+
+Bases de datos y Sequelize
+
+
+
+SPRINT 7
+--------
+
+....
+
+
