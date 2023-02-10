@@ -16,7 +16,17 @@ const controller = {
     },
 
     login: (req,res) => {
-        res.render ('./users/login')
+        res.render ('./users/login');
+    },
+
+    validar: (req,res) => {
+
+        let userToLogin = User.findByField('email', req.body.email);
+
+        console.log(userToLogin);
+        
+        return res.send ("Validando..." + req.body.email);
+   
     },
 
     contact: (req,res) => {
@@ -50,7 +60,7 @@ const controller = {
         User.create(userToCreate);
 
 		// //return res.send('Ok, las validaciones se pasaron y no tienes errores');
-        return res.render ('./users/register');
+        return res.render ('./users/login');
 	},
 
 }

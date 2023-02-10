@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/css/login.css" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
@@ -19,21 +19,23 @@
     <%- include ("../partials/header") %>
     <secion class="formulario">
         <article>
-            <h1 class="bienvenido">Bienvenido</h1>
+            <h1 class="centrar">Bienvenido</h1>
         </article>
-        <article class="centrar">
-            <form action="/login" method="POST">
-                <p>
-                    <input class="formin" type="text" name="usuario" placeholder="Nombre de Usuario">
-                </p>
-                <p>
-                    <input class="formin1" type="password" name="contrasenia" placeholder="Contraseña">
-                </p>
-            </form>
-        </article>
-        <article class="iniciando">
-            <button class="iniciosesion">Iniciar sesion</button>
-        </article>
+        <br>
+        
+        <form method="POST" action="/user/login">
+            <article class="centrar">
+                    <p>
+                        <input class="formin" type="text" name="email" placeholder="Email">
+                    </p>
+                    <p>
+                        <input class="formin1" type="password" name="password" placeholder="Contraseña">
+                    </p>
+            </article> 
+            <article class="iniciando">  
+                <button type="submit" class="iniciosesion">Iniciar sesion</button>
+            </article>
+        </form>
         <article class="subir"><button class="olvidarcontra">¿Has olvidado tu contraseña?</button>
         </article>
         <article class="subir"><button class="olvidarcontra">¿No tienes cuenta? Registrate</button>

@@ -46,9 +46,11 @@ const validations = [
 
 router.get ('/register', userController.register);
 router.get ('/login', userController.login);
+
 router.get ('/contactanos', userController.contact);
 router.get ('/terminos', userController.terminos);
 router.post ('/register', upload.single('avatar'), validations, userController.save);
+router.post ('/login', userController.validar);
 
 
 module.exports = router;

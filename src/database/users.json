@@ -4,7 +4,7 @@
   "nombre": "Carlos",
   "apellido": "Gimenez",
   "email": "Carlosg@gmail.com",
-  "contraseña": "Callefalsa123",
+  "password": "Callefalsa123",
   "categoria": 1,
   "imagen": "avatar.png"
  },
@@ -13,7 +13,7 @@
   "nombre": "Lucia",
   "apellido": "Lima",
   "email": "LuciaLima@yahoo.com.ar",
-  "contraseña": "9999",
+  "password": "9999",
   "categoria": 2,
   "imagen": "lisa.jpg"
  },
@@ -22,7 +22,7 @@
   "nombre": "Diego",
   "apellido": "Toledo",
   "email": "Dieguito12@outlook.com",
-  "contraseña": "Diego10",
+  "password": "Diego10",
   "categoria": 3,
   "imagen": "carpincho.jpg"
  },
@@ -31,7 +31,7 @@
   "nombre": "Emilio",
   "apellido": "Buzzi",
   "email": "enbuzzi@outlook.com",
-  "contraseña": "1234",
+  "password": "1234",
   "categoria": 3,
   "imagen": "Iguana.jpg"
  },
@@ -40,7 +40,7 @@
   "nombre": "Emilio",
   "apellido": "Buzzi",
   "email": "enbuzzi@outlook.com",
-  "contraseña": "1234",
+  "password": "1234",
   "categoria": 3,
   "imagen": "Iguana.jpg"
  },
@@ -49,7 +49,7 @@
   "nombre": "Emilio",
   "apellido": "Buzzi",
   "email": "enbuzzi@outlook.com",
-  "contraseña": "1234",
+  "password": "1234",
   "categoria": 3,
   "imagen": "Iguana.jpg"
  },
@@ -58,7 +58,7 @@
   "nombre": "Mateo",
   "apellido": "Buzzi",
   "email": "mbr@gmail.com",
-  "contraseÃ±a": "1234",
+  "password": "1234",
   "pais": "Argentina",
   "imagen": "user1675633865925.jpg"
  },
@@ -67,8 +67,17 @@
   "nombre": "Juan",
   "apellido": "Perez",
   "email": "jp@gmail.com",
-  "contraseÃ±a": "1234",
+  "password": "1234",
   "pais": "Argentina",
   "imagen": "user1675715191461.JPG"
+ },
+ {
+  "id": 9,
+  "nombre": "Julieta",
+  "apellido": "Micheloni",
+  "email": "jmicheloni@gmail.com",
+  "password": "1234",
+  "pais": "Argentina",
+  "imagen": "user1675989176259.jpg"
  }
 ]
