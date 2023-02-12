@@ -10,6 +10,16 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
+
+        categoria: {
+            type: dataTypes.STRING,
+            foreignKey: true
+        },
+
+        codigo: {
+            type: dataTypes.STRING
+        },
+
         nombre: {
             type: dataTypes.STRING
         },
@@ -23,12 +33,13 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         precio: {
-            type: dataTypes.STRING
+            type: dataTypes.
         },
 
-        categoria: {
-            type: dataTypes.STRING
+        stock: {
+            type: dataTypes.INTEGER
         }
+
     };
 
     let config = {
