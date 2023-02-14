@@ -2,6 +2,10 @@
 //const { Router } = require('express');
 const express = require('express');
 const path = require('path');
+//requerimos express-session//
+const session = require('express-session')
+const cookies = require('cookie-parser')
+
 
 //Ejecutamos la función y almacenamos el objeto que devuelve en la constante app. Ahora, tenemos accesos a tdoas las propiedades y métodos que nos da express.
 const app = express();
@@ -23,6 +27,18 @@ app.set('views', path.join(__dirname, '/src/views')); // Define la ubicación de
 
 //Al objeto app le pedidos el metodo listen, que se encargará de levantar el servidor. Parámetros: PUERTO | FUNCIÓN (Callback)
 app.listen(3000, () => console.log ("Servidor corriendo"));
+
+//ejecutamos express-session//
+
+app.use(session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false,
+}));
+
+//ejecutamos cookiparser//
+app.use(cookies());
+
 
 //Al objeto app le pedimos dos parámetros URL | CallBack (req, res) : Req (Toda la info de la peticón que llego) y Res (Todas la propiedades y metodos de la respuesta que vamos a enviar)
 /*app.get("/", (req,res) => {

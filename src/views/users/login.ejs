@@ -27,9 +27,15 @@
             <article class="centrar">
                     <p>
                         <input class="formin" type="text" name="email" placeholder="Email">
+                        <% if (locals.errors && errors.email) { %>
+                            <div><%= errors.email.msg %></div>
+                        <% } %>    
                     </p>
                     <p>
                         <input class="formin1" type="password" name="password" placeholder="Contraseña">
+                    </p>
+                    <p>
+                        <input class="formin1" type="checkbox" name="remember"> Recordar usuario
                     </p>
             </article> 
             <article class="iniciando">  

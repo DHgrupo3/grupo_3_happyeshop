@@ -3,11 +3,14 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 const {json} = require('express');
+const bcryptjs= require('bcryptjs');
 //const { all } = require('../routes/users');
 
 const { validationResult } = require('express-validator');
 
 const User = require('../src/models/user.js');
+const { log } = require('console');
+
 
 const controller = {
     
@@ -17,15 +20,39 @@ const controller = {
 
     login: (req,res) => {
         res.render ('./users/login');
-    },
+       },
 
     validar: (req,res) => {
 
         let userToLogin = User.findByField('email', req.body.email);
-
-        console.log(userToLogin);
         
-        return res.send ("Validando..." + req.body.email);
+        if (userToLogin){
+        let passwordCheck = bcryptjs.compareSync(req.body.password, userToLogin.password)
+        
+            if (passwordCheck) {
+                delete userToLogin.password;
+                req.session.userLogged = userToLogin;
+                return res.redirect ('./users/userProfile')
+            };
+
+            return res.render ('./users/login', {
+                errors:{
+                    email:{
+                        msg: 'las credenciales son invalidas'
+                    }
+                }
+            });
+        }
+
+        //console.log(userToLogin);//
+        
+        return res.render ('./users/login', {
+            errors:{
+                email:{
+                    msg: 'El email no corresponde a un usuario registrado'
+                }
+            }
+        });
    
     },
 
@@ -51,17 +78,43 @@ const controller = {
 				oldData: req.body
 			});
 		}
+//evito que el mail ya este registrado//
+
+        let userInDb = User.findByField('email', req.body.email);
+        
+        if (userInDb) {
+			return res.render('./users/register', {
+				errors:{
+                    email:{
+                        msg: 'este email ya esta registrado'
+                    }
+                } ,
+				oldData: req.body
+			});
+        }
 
         let userToCreate = {
             ...req.body,
+            password: bcryptjs.hashSync(req.body.password, 10),
             imagen: req.file.filename
         }
 
-        User.create(userToCreate);
+        let userCreated = User.create(userToCreate);
 
 		// //return res.send('Ok, las validaciones se pasaron y no tienes errores');
         return res.render ('./users/login');
 	},
+
+    profile: (req, res) => {
+        return res.render ('./users/userProfile', {
+            user: req.session.userLogged
+        });
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect ('/');
+    }
 
 }
 
