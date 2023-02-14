@@ -52,8 +52,8 @@ Nos lanzamos a migrar todo lo hecho con base en JSON a Base de Datos. Actualizam
 Bases de datos y Sequelize
 
 - Avanzamos con la instalación, configuración y modelo de datos. Creamos el archivo ..database\database.md con todo lo aprendido en cuenta a secuencia de pasos para lograr tener una visión unica de como lo encaramos. (Lección aprendida de Springs anteriores)
-
-
+- Mantenemos el Tablero de Trabajo TRELLO ( https://trello.com/b/xhm3jenA/ecommerce-venta-directa ) con todas las tarjetas asociadas a este Sprint. Fuimos paso a paso para cumplir el objetivo. El resultado se visualiza en el Checklist de cada tarjeta asociada a BackEnd BD & Sequelize.
+- Como mejor práctica, armamos el archivo Querys Varios dentro de la carpeta database. Para dejar acentado los querys trabajados y usarlos en proximas actividades.
 
 SPRINT 7
 --------
