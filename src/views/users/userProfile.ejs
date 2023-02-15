@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/index.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/63355f2aa7.js" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+    <title>Happy e-Shop - Acceder</title>
+</head>
+<body>
+    <%- include ("../partials/header") %>
+    <secion class="formulario">
+        <article>
+            <h1 class="centrar">Bienvenido</h1>
+        </article>
+        <br>
+        <h2>Hola <%= User.nombre %></h2>
+        <img src="/public/img/users/<%=User.imagen%>">
+        <div><%= User.email %></div>
+          
+    </secion>
+
+    <%- include ("../partials/footer") %>
+</body>
+
+</html> 

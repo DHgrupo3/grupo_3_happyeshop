@@ -79,5 +79,41 @@
   "password": "1234",
   "pais": "Argentina",
   "imagen": "user1675989176259.jpg"
+ },
+ {
+  "id": 10,
+  "nombre": "Rodrigo",
+  "apellido": "Vela",
+  "email": "rodrigovlea22@gmail.com",
+  "password": "$2a$10$42fkvkbFYbFq4OjB9/kRquEkUC.UV9FOO2q9Gtv52hJa2E9IVd5/.",
+  "pais": "Argentina",
+  "imagen": "user1676209932247.jpg"
+ },
+ {
+  "id": 11,
+  "nombre": "Rodrigo",
+  "apellido": "Vela",
+  "email": "sdfds@dssdee.com",
+  "password": "$2a$10$NnreL9b14okDsylmBBPexeBqzYyfbA5Md79pWmLenfQPkJDbe8NTu",
+  "pais": "Argentina",
+  "imagen": "user1676211405200.jpg"
+ },
+ {
+  "id": 12,
+  "nombre": "Valentino",
+  "apellido": "Vela",
+  "email": "valenvela@gmail.com",
+  "password": "$2a$10$qGex/7JPjMoUov153BehpuST0YhfN6XAgu09jFYzJ7x1RQKWQ04eW",
+  "pais": "Argentina",
+  "imagen": "user1676232834105.jpg"
+ },
+ {
+  "id": 13,
+  "nombre": "Patricia",
+  "apellido": "Ventura",
+  "email": "pventura@gmail.com",
+  "password": "$2a$10$ntTGAICwJOHBMP9/RGJBAevabmDQyd7cGqmnVUJp2KCkQ2Eea15oa",
+  "pais": "Brasil",
+  "imagen": "user1676235588886.jpg"
  }
 ]
