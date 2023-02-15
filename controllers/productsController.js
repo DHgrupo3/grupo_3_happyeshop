@@ -3,7 +3,7 @@ const fs = require('fs');
 const { json } = require('express');
 
 //Conexión a Base de Datos
-//let db = require("../database/models/Product.js");
+const db = require("../database/models");
 
 const controller = {
     //Método que lista los productos para el usuario final
