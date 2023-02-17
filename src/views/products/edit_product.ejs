@@ -5,76 +5,86 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="/css/edit_product.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+
+        <!-- Bloque para importar Iconos y Estilos de BootStrap -->
         <script src="https://kit.fontawesome.com/63355f2aa7.js" crossorigin="anonymous"></script>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="/css/master.css">
+        <!-- Fin de Bloque Look & Feel -->
     
-    <title>Happy e-Shop - Contactanos</title>
+    <title>Happy e-Shop - Editar</title>
 </head>
 
 <%- include ("../partials/header") %>
 
 
 <main>
-    <section>
-        <div >
-            <div >
-                <div >
-                    <h2 >Formulario de edición de productos</h2>
-                </div>
-            </div>
-            <div >
+    <br>
+    <div class="alert alert-success" role="alert">
+        <b>Edición de Producto</b>
+    </div>
+
+    <section class="container-fluid _footer bg-body-tertiary" style="justify-content: center; display:flex;">
+        <div class="card border-success " style="width: 42rem; padding: 10px;">
+
                 <form action="/admin/edit_product/<%= productoEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-                    <div >
-                        <div >
-                            <label for="name" >Nombre del producto:</label>
-                            <input type="text" id="name" name="name" placeholder="Ej: Hidro Total" class="form-input" value="<%= productoEditar.nombre%>">
+
+                    
+                    <!-- <div class="d-grid gap-2 col-6 mx-auto"> -->
+                        <div>
+                            <label for="name" class="form-label">Nombre del producto:</label>
+                            <input type="text" id="name" name="name" placeholder="Nombre del producto" class="form-control" value="<%= productoEditar.nombre%>">
                         </div>
-                        <div >
-                            <label for="description" >Descipción:</label>
-                            <textarea name="description" id="description" placeholder="<%= productoEditar.descripcion%>"></textarea>
+                        <div>
+                            <label for="description" class="form-label">Descipción:</label>
+                            <textarea name="description" class="form-control" id="description" placeholder="<%= productoEditar.descripcion%>"></textarea>
                         </div>
 
                         <!--Aquí solicito la imagen-->
                         <div class="custom-file">
                             <figure class="form-group">
-                                <img  class="w-100" src="/img/productos/<%=productoEditar.imagen%>" alt="producto <%= productoEditar.nombre%>">
+                                <img  class="rounded mx-auto d-block w-50" src="/img/productos/<%=productoEditar.imagen%>" alt="producto <%= productoEditar.nombre%>">
                             </figure>
                             <input type="hidden"  name="oldImagen"  value="<%= productoEditar.imagen%>">
                             <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
-                            <input type="file" name="imagen" value="<%= productoEditar.imagen%>" required> 
-                            <!--<input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="imagen" required value=""> 
-
-                            <label class="custom-file-label" for="inputGroupFile01">Seleccione una imagen...</label>-->
-                          </div>
+                            <input type="file" class="form-control" name="imagen" value="<%= productoEditar.imagen%>" required> 
+                        </div>
 
                         <div >
-                            <label for="price" >Precio del producto:</label>
-                            <input type="text" id="price" name="price" placeholder="Ej: 2400" value="<%= productoEditar.precio%>" >
+                            <label for="price" class="form-label">Precio del producto:</label>
+                            <input type="text" class="form-control" id="price" name="price" placeholder="Ej: 2400" value="<%= productoEditar.precio%>" >
                         </div>
+
                         <div>
-                            <label for="category" >Categoría:</label>
-                            <select name="category" id="category" >
+                            <label for="category" class="form-label">Categoría:</label>
+                            <select class="form-control" name="category" id="category" >
                                 <option value="">Elegí</option>
                                 <option value="En oferta"<%= (productoEditar.categoria == "En oferta") ? "selected": null %>>En oferta</option>
                                 <option value="Últimos agregados"<%= (productoEditar.categoria == "Últimos agregados") ? "selected": null %>>Últimos agregados</option>
                             </select>
                         </div>
               
-                        <div >
-                            <button type="submit">Guardar producto</button>
-                            <a href="/admin">Volver</a>
+                        <div class=" _card">
+                            <button class="btn btn-outline-success btn-sm w-50" type="submit">Guardar producto</button>&nbsp;
+                            <a href="/admin" class="btn btn-outline-success btn-sm w-50">Volver</a>
                         </div>
-                    </div>
+
+                    <!-- </div> -->
+
                 </form>
-            </div>
+        </div>        
     </section>
+
     </main>
+    <br>
     <%- include ("../partials/footer") %>
     
+    <!-- Bloque que invoca a las librerias de Javascript para el correcto funcionamiento de animaciones de BootStrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+    <!-- Fin de Bloque Look & Feel -->
+
 </body>
 
 </html>

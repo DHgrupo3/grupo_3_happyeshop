@@ -8,6 +8,9 @@ const controller = {
     terminos: (req,res) => {
         res.render ('terminos')
     },
+    contacto: (req,res) => {
+        res.render ('contacto')
+    },
     cart: (req,res) => {
         res.render ('productCart')
     },

@@ -11,6 +11,7 @@ const mainController = require('../controllers/mainController');
 router.get('/', mainController.index);
 router.get('/who', mainController.who);
 router.get('/terminos', mainController.terminos);
+router.get('/contacto', mainController.contacto);
 router.get ('/cart', mainController.cart);
 
 /* GET home page. */
