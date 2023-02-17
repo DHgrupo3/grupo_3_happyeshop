@@ -124,5 +124,14 @@
   "password": "$2a$10$SI7ZgNpPt7okeu9Shzzkj.UqLSFupK7w3E7TDdO51F/gV3/OlNTHm",
   "pais": "Argentina",
   "imagen": "user1676652464954.png"
+ },
+ {
+  "id": 15,
+  "nombre": "Max",
+  "apellido": "Verstappen",
+  "email": "mv@mv.com",
+  "password": "$2a$10$3wyFI0H4s..WR9HbZyaPFOD/aeGQaoXn3cJ68JfKsjaO1cfTsqDkK",
+  "pais": "Argentina",
+  "imagen": "user1676668650382.jpg"
  }
 ]
