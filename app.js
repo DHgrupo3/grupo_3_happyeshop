@@ -6,9 +6,13 @@ const path = require('path');
 const session = require('express-session')
 const cookies = require('cookie-parser')
 
+const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
+
 
 //Ejecutamos la función y almacenamos el objeto que devuelve en la constante app. Ahora, tenemos accesos a tdoas las propiedades y métodos que nos da express.
 const app = express();
+
+
 
 const methodOverride = require('method-override');
 
@@ -36,9 +40,13 @@ app.use(session({
     saveUninitialized: false,
 }));
 
+
+
+
 //ejecutamos cookiparser//
 app.use(cookies());
 
+app.use(userLoggedMiddleware);
 
 //Al objeto app le pedimos dos parámetros URL | CallBack (req, res) : Req (Toda la info de la peticón que llego) y Res (Todas la propiedades y metodos de la respuesta que vamos a enviar)
 /*app.get("/", (req,res) => {

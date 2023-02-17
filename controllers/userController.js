@@ -23,7 +23,7 @@ const controller = {
        },
 
     validar: (req,res) => {
-
+        
         let userToLogin = User.findByField('email', req.body.email);
         
         if (userToLogin){
@@ -32,7 +32,13 @@ const controller = {
             if (passwordCheck) {
                 delete userToLogin.password;
                 req.session.userLogged = userToLogin;
-                return res.redirect ('./users/userProfile')
+
+                if(req.body.remember){
+                    res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) *2 })
+                }
+
+
+                return res.redirect ('/user/userProfile')
             };
 
             return res.render ('./users/login', {
@@ -106,12 +112,14 @@ const controller = {
 	},
 
     profile: (req, res) => {
+        
         return res.render ('./users/userProfile', {
-            user: req.session.userLogged
+        user: req.session.userLogged
         });
     },
 
     logout: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.destroy();
         return res.redirect ('/');
     }
