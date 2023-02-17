@@ -54,7 +54,8 @@ router.get ('/contactanos', userController.contact);
 router.get ('/terminos', userController.terminos);
 router.post ('/register', upload.single('avatar'), validations, userController.save);
 router.post ('/login', userController.validar);
-router.get ('/userProfile', authMiddleware, userController.profile);
+// router.get ('/userProfile', authMiddleware, userController.profile);
+router.get ('/userProfile', userController.profile);
 router.get ('/logout', userController.logout);
 
 module.exports = router;
