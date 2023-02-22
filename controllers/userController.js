@@ -11,11 +11,16 @@ const { validationResult } = require('express-validator');
 const User = require('../src/models/user.js');
 const { log } = require('console');
 
+//Conexión a Base de Datos
+const db = require("../database/models");
 
 const controller = {
     
     register: (req,res) => {
-        res.render ('./users/register')
+        db.Pais.findAll()
+        .then(function(pais){
+            return res.render ('./users/register', {pais:pais});
+        } ) 
     },
 
     login: (req,res) => {

@@ -22,47 +22,25 @@
           <b>Nuestros Productos</b>
         </div>
 
+        <!-- Busca todos los productos y los muestra -->
+
         <div class="row row-cols-1 row-cols-md-2 g-4 _card">
+          <%productos.forEach(productos => { %>
             <div class="col">
               <div class="card h-100 border-success">
-                <img src="/img/Reductor_PH.jpg" class="rounded mx-auto d-block" alt="...">
+                <img src="/img/productos/<%= productos.imagen%>" class="rounded mx-auto d-block h-50" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">$2.400</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                  <h5 class="card-title"><%= productos.nombre%></h5>
+                  <h5 class="card-title"><%= productos.precio%></h5>
+                  <p class="card-text"><%= productos.codigo%></p>
+                  <p class="card-text"><%= productos.descripcion%></p>
                   <a href="#" class="btn btn-outline-success">Agregar al Carrito</a>
                 </div>
               </div>
             </div>
-            <div class="col">
-              <div class="card h-100 border-success">
-                <img src="/img/Medidor_PH.jpg" class="rounded mx-auto d-block" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">$4.400</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <a href="#" class="btn btn-outline-success">Agregar al Carrito</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 border-success">
-                <img src="/img/Fenolica.jpg" class="rounded mx-auto d-block" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">$6.700</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-                  <a href="#" class="btn btn-outline-success">Agregar al Carrito</a>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card h-100 border-success">
-                <img src="/img/Nutrientes.jpg" class="rounded mx-auto d-block" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">$12.500</h5>
-                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <a href="#" class="btn btn-outline-success">Agregar al Carrito</a>
-                </div>
-              </div>
-            </div>
+            <%  }); %>
+
+
           </div>
           <br>
     </main>

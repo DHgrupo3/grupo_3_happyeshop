@@ -3,6 +3,9 @@ const path = require('path');
 const fs = require('fs');
 const {json} = require('express');
 
+//Conexión a Base de Datos
+const db = require("../database/models");
+
 const controller = {
     index: (req,res)=>{
        let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
@@ -100,18 +103,25 @@ const controller = {
 
     //Renderiza el formulario de Creación
     create: (req,res) => {
-
-        res.render ('./products/create_product')
+      
+        db.Categoria.findAll()
+        .then(function(categorias){
+            return res.render ('./products/create_product', {categorias:categorias});
+        } ) 
+        
     },
-mostrar: (req,res) =>{
-  let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
-  let miProducto;
-  productos.forEach(producto => {
-      if(producto.id == req.params.id){
-          miProducto = producto;
-      }
-  });
-  res.render(path.resolve(__dirname,'../src/views/products/productDetail'), {miProducto})
+
+    mostrar: (req,res) =>{
+
+    let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+    let miProducto;
+    productos.forEach(producto => {
+        if(producto.id == req.params.id){
+            miProducto = producto;
+        }
+    });
+
+    res.render(path.resolve(__dirname,'../src/views/products/productDetail'), {miProducto})
 },
 }
 

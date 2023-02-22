@@ -8,16 +8,18 @@ const db = require("../database/models");
 const controller = {
     //Método que lista los productos para el usuario final
     index: (req,res) => {
-        res.render ('./products/productList')
-    
+
+        db.Producto.findAll()
+            .then(function(productos){
+                return res.render ('./products/productList', {productos:productos});
+            } ) 
+  
     },
 
     //Método que lista el producto seleccionado para el usuario final
     detail: (req,res) => {
         
-       // db.Productos.findAll();
-
-        res.render ('./products/productDetail')
+       res.render ('./products/productDetail')
     
     },
 

@@ -58,15 +58,32 @@
                         <%= errors.password.msg %>
                         </div>
                             <% } %>
-                </div>
-                <div class="d-grid gap-2 col-6 mx-auto">
-                    <ul><input class="form-control" type="text" name="pais" placeholder="Pais" value= "<%= locals.oldData ? oldData.pais : null %>"/></ul>
-                    <% if (locals.errors && errors.pais){ %>
+                    </div>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                    
+                    <!-- <ul><input class="form-control" type="text" name="pais" placeholder="Pais" value= "<%=// locals.oldData ? oldData.pais : null %>"/>-->
+                    <ul>
+                    <select name="pais" placeholder="Pais" id="category" class="form-control">
+                        <option value="">Elegí</option>
+                      <!-- Busca en la Base a través de userController los Paises existentes y los muestra -->
+                      <%pais.forEach(pais => { %>
+                        <option value=<%= locals.oldData ? oldData.pais : pais.id %>>
+                            <%= pais.nombre%>
+                        </option>
+                        <%  }); %>
+                        <!-- Fin del desplegable Paises -->
+                
+
+                        <% if (locals.errors && errors.pais){ %>
                         <div>
-                        <%= errors.pais.msg %>
+                            <%= errors.pais.msg %>
                         </div>
-                            <% } %>
+                        <% } %>
+                        
+                    </select>
+                    </ul>
                 </div>
+                
                 <div class="d-grid gap-2 col-6 mx-auto">
                     <ul><input class="form-control" type="file" name="avatar" placeholder="Avatar" /></ul>
                     <% if (locals.errors && errors.avatar){ %>

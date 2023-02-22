@@ -48,8 +48,15 @@
                             <label for="category" class="form-label">Categoría:</label>
                             <select name="category" id="category" class="form-control">
                                 <option value="">Elegí</option>
-                                <option value="En oferta">En oferta</option>
-                                <option value="Últimos agregados">Últimos agregados</option>
+
+                                <!-- Busca en la Base a través de adminController las Categorias existentes y las muestra -->
+                                <%categorias.forEach(categorias => { %>
+                                <option value=<%= categorias.id%>>
+                                    <%= categorias.nombre%>
+                                </option>
+                                <%  }); %>
+                                <!-- Fin del desplegable Categorias -->
+
                             </select>
                         </div>
                         <br>
