@@ -23,16 +23,16 @@ const upload = multer ({storage});
 const userController = require('../controllers/userController');
 
 const validations = [
-		body('nombre').notEmpty().withMessage('Tienes que escribir un nombre').isLength({ min: 2 }).withMessage('El nombre debe tener al menos 2 caracteres'),
+	body('nombre').notEmpty().withMessage('Tienes que escribir un nombre').isLength({ min: 2 }).withMessage('El nombre debe tener al menos 2 caracteres'),
     body('apellido').notEmpty().withMessage('Tienes que escribir un apellido').isLength({ min: 2 }).withMessage('El apellido debe tener al menos 2 caracteres'),
-		body('email')
-				.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
-				.isEmail().withMessage('Debes escribir un formato de correo válido'),
-		body('password').notEmpty().withMessage('Tienes que escribir una contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
-		body('pais').notEmpty().withMessage('Tienes que elegir un país'),
-		body('avatar').custom((value, { req }) => {
-				let file = req.file;
-				let acceptedExtensions = ['.jpg', '.png', '.gif'];
+	body('email')
+		.notEmpty().withMessage('Tienes que escribir un correo electrónico').bail()
+		.isEmail().withMessage('Debes escribir un formato de correo válido'),
+	body('password').notEmpty().withMessage('Tienes que escribir una contraseña').isLength({ min: 8 }).withMessage('La contraseña debe tener al menos 8 caracteres'),
+	body('pais').notEmpty().withMessage('Tienes que elegir un país'),
+	body('avatar').custom((value, { req }) => {
+		let file = req.file;
+		let acceptedExtensions = ['.jpg', '.png', '.gif'];
 
 				if (!file) {
 					throw new Error('Tienes que subir una imagen');
