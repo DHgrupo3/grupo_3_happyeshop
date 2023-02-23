@@ -40,11 +40,15 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         pais_id: {
-            type: dataTypes.STRING
+            type: dataTypes.INTEGER
         },
 
         imagen: {
             type: dataTypes.STRING
+        },
+
+        estado_id: {
+            type: dataTypes.INTEGER
         }
     };
 
@@ -58,13 +62,21 @@ module.exports = (sequelize, dataTypes) => {
     Usuario.associate = function(models) {
         Usuario.belongsTo(models.Pais,{
             as: 'pais',
-            foreignKey: 'id'
+            foreignKey: 'pais_id'
         });
 
-        Usuario.belongsTo(models.Venta,{
-            as: 'venta',
-            foreignKey: 'usuario_id'
+    
+        Usuario.belongsTo(models.EstadoUsuario,{
+            as: 'estadosusuario',
+            foreignKey: 'estado_id'
         });
+
+
+
+        // Usuario.belongsTo(models.Venta,{
+        //     as: 'ventas',
+        //     foreignKey: 'usuario_id'
+        // });
 
 
     }

@@ -12,40 +12,42 @@
     <link rel="stylesheet" href="../css/master.css">
     <!-- Fin de Bloque Look & Feel -->
 
-    <title>Happy e-Shop - Administración de Productos</title>
+    <title>Happy e-Shop - Administración de Usuarios</title>
 </head>
 <body>
     <%- include ("../partials/header") %>
     <main>
 
         <div class="alert alert-success" role="alert">
-            <b>Administración de Productos</b>
+            <b>Administración de Usuarios</b>
         </div>
 
         <div class="d-grid gap-2 col-6 mx-auto">
 
-        <a href="/admin/create_product" class="btn btn-outline-success btn-sm"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Crear Producto</a>
+        <a href="/user/registerAdmin" class="btn btn-outline-success btn-sm"><i class="fa-solid fa-plus"></i>&nbsp;&nbsp;Registrar Usuario</a>
         
         <article >
             <table class="table table-success table-striped">
                 <thead class="table_product">
                     <th scope="col">#</th>
-                    <th scope="col">Nombre</th>
+                    <th scope="col">Nombre y Apellido</th>
+                    <th scope="col">e-mail</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Ver</th> 
                     <th scope="col">Editar</th> 
                     <th scope="col">Borrar</th> 
                 </thead>
                 <tbody>
-            <% productos.forEach(productos => { %>
+            <% usuarios.forEach(usuarios => { %>
                 <tr class="products_abm">
-                    <td><%= productos.id%>&nbsp;&nbsp;&nbsp;</td>
-                    <td><%= productos.nombre%>&nbsp;&nbsp;&nbsp;</td>
-                    <td><%= productos.estados.nombre%>&nbsp;&nbsp;&nbsp;</td>
+                    <td><%= usuarios.id%>&nbsp;&nbsp;&nbsp;</td>
+                    <td><%= usuarios.nombre%>&nbsp;<%= usuarios.apellido%>&nbsp;&nbsp;</td>
+                    <td><%= usuarios.email%>&nbsp;&nbsp;&nbsp;</td>
+                    <td><%= usuarios.estadosusuario.nombre%>&nbsp;&nbsp;&nbsp;</td>
                     <!--  productos.estados.nombre -->
-                    <td><a href="/admin/productDetail/<%= productos.id%>"> <i class="fa-solid fa-eye link-success"></i></a></td>
-                    <td><a href="/admin/edit_product/<%= productos.id%>"> <i class="fa-solid fa-pencil link-success"></i></a></td>
-                    <td><a href="/admin/delete_product/<%= productos.id%>"><i class="fa-solid fa-trash link-success"></i></a></td>
+                    <td><a href="/user/userDetail/<%= usuarios.id%>"> <i class="fa-solid fa-eye link-success"></i></a></td>
+                    <td><a href="/user/edit_user/<%= usuarios.id%>"> <i class="fa-solid fa-pencil link-success"></i></a></td>
+                    <td><a href="/user/delete_user/<%= usuarios.id%>"><i class="fa-solid fa-trash link-success"></i></a></td>
                 </tr>
             
             <%  }); %>

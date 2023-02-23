@@ -56,11 +56,15 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'id'
         });
 
-        Venta.belongsTo(models.Detalle,{
-            as: 'venta',
-            foreignKey: 'venta_id'
-        });
+        
+        Venta.belongsToMany(models.Producto,{
+            as: 'ventas',
+            through: models.Detalle,
+            foreignKey: 'venta_id',
+            otherKey: 'productos_id',
+            timestamps: false
 
+        });
     }
 
     return Venta; 

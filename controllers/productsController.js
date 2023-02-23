@@ -9,7 +9,9 @@ const controller = {
     //Método que lista los productos para el usuario final
     index: (req,res) => {
 
-        db.Producto.findAll()
+        db.Producto.findAll({
+            include : [{association : 'estados'}, {association : 'categorias'}]
+           })
             .then(function(productos){
                 return res.render ('./products/productList', {productos:productos});
             } ) 
@@ -18,9 +20,15 @@ const controller = {
 
     //Método que lista el producto seleccionado para el usuario final
     detail: (req,res) => {
-        
-       res.render ('./products/productDetail')
-    
+
+    db.Producto.findByPk(req.params.id, {
+        include : [{association : 'estados'}, {association : 'categorias'}]
+      })
+      .then(function(miProducto){
+             console.log (miProducto);
+              return res.render(path.resolve(__dirname,'./products/productDetail'), {miProducto})
+      } ) 
+
     },
 
 }

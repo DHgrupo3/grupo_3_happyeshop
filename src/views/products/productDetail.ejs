@@ -27,7 +27,7 @@
 
         <div class="card border-success text-center" style="width: 42rem;">
             <br>
-            <img src="/img/productos/<%= miProducto.imagen%>" class="rounded mx-auto d-block w-50" alt="...">
+            <img src="/img/productos/<%= miProducto.imagen%>" class="rounded mx-auto d-block" style="width: 14rem;" alt="...">
               <div class="card-body">
                 <h5 class="card-title"><%= miProducto.nombre%></h5>
                 <p class="card-text">
@@ -35,7 +35,8 @@
                   <%= miProducto.descripcion %> <br>
                   <br>
                   <strong>Precio:</strong> <%= miProducto.precio %><br>
-                  <strong>Categoria:</strong> <%= miProducto.categoria %><br>
+                  <strong>Categoria:</strong> <%= miProducto.categorias.nombre %><br>
+                  <strong>Estado:</strong> <%= miProducto.estados.nombre %><br>
                 </p>
                 <div class="_card">
                     <a href="/admin" class="btn btn-outline-success btn-sm w-100">Volver</a>

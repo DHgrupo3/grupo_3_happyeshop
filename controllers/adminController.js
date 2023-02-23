@@ -8,102 +8,161 @@ const db = require("../database/models");
 
 const controller = {
     index: (req,res)=>{
-       let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
-       res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos});
+
+      // ***BD*** Busca todos los productos en Base de Datos y los muestra
+
+      //let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+
+       db.Producto.findAll({
+        include : [{association : 'estados'}, {association : 'categorias'}]
+       })
+       .then(function(productos){
+           //return res.render ('./products/productList', {productos:productos});
+           console.log(productos);
+           return res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos:productos});
+       } ) 
+
+       //res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos:productos});
       // res.render ('./products/administrar');
     },
 
-
-    //newProduct: (req,res) => {
-      //res.send("Grabo Datos");
-
-      //Leer el JSON y transformar a objeto literal
-      //let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../database/productos.json')) );
-      //save
-      //res.render(path.resolve(__dirname, '../src/views/products/create_product'),{productos} );
-
-   // },
-
     //Guarda los resultados de una creación
     save: (req,res) =>{
-      let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json')) );
-      //Obtiene el ultimo elemento
-      let ultimoProducto = productos.pop();
+      // let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json')) );
+      // //Obtiene el ultimo elemento
+      // let ultimoProducto = productos.pop();
 
-      productos.push(ultimoProducto);
+      // productos.push(ultimoProducto);
 
-      let id = parseInt(ultimoProducto.id);
+      // let id = parseInt(ultimoProducto.id);
 
-      let nuevoProducto = {
-        id: id + 1,
+      // let nuevoProducto = {
+      //   id: id + 1,
+      //   nombre: req.body.name,
+      //   descripcion: req.body.description,
+      //   imagen: req.file.filename,
+      //   precio: req.body.price,
+      //   categoria: req.body.category,
+      // }
+
+      // productos.push(nuevoProducto);
+      // let nuevoProductoGuardar = JSON.stringify(productos,null,2);
+      // fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), nuevoProductoGuardar);
+
+      db.Producto.create({
         nombre: req.body.name,
         descripcion: req.body.description,
         imagen: req.file.filename,
         precio: req.body.price,
-        categoria: req.body.category,
-      }
+        categoria_id: req.body.category,
+        estado_id: 1
+      });
 
-      productos.push(nuevoProducto);
-      let nuevoProductoGuardar = JSON.stringify(productos,null,2);
-      fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), nuevoProductoGuardar);
-      res.redirect('/admin');
+      db.Producto.findAll({
+        include : [{association : 'estados'}, {association : 'categorias'}]
+       })
+      .then(function(productos){
+          return res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos:productos});
+      } ) 
+
     },
 
     //Renderiza el formulario de Edición
     edit: (req,res) => {
 
-      let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
-      // res.render(path.resolve(dirname, '../src/views/products/administrar'), {productos});
-      const productoId = req.params.id;
-      let productoEditar = productos.find(producto=> producto.id == productoId);
+      let pedidoProducto = db.Producto.findByPk(req.params.id,{
+        include : [{association : 'estados'}, {association : 'categorias'}]
+       });
+      let pedidoCategorias = db.Categoria.findAll();
+      let pedidoEstados = db.Estado.findAll();
 
-      res.render(path.resolve(__dirname,'../src/views/products/edit_product'), {productoEditar});
+      Promise.all([pedidoProducto, pedidoCategorias, pedidoEstados])
+        .then (function([producto, categorias, estados]) {
+            return res.render(path.resolve(__dirname,'../src/views/products/edit_product'), {producto:producto, categorias:categorias, estados:estados})
+                 
+       }) 
     },
 
     update: (req,res) =>{
 
-      let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+      //let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
       //res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos});
 
       req.body.id = req.params.id;
       req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
-      let productoUpdate = productos.map(producto => {
-        if(producto.id == req.body.id ){
-           
-          return producto = {
-            id: req.body.id,
+      
+      db.Producto.update({
               nombre: req.body.name,
               descripcion: req.body.description,
               imagen: req.file.filename,
               precio: req.body.price,
-              categoria: req.body.category
-          }
-        }
-        return producto;
-       })
+              categoria_id: req.body.category,
+              estado_id: req.body.status
 
-      let productoActualizar = JSON.stringify(productoUpdate, null, 2);
-      fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), productoActualizar);
-      res.redirect('/admin');
+          },{
+            where: {
+              id: req.params.id
+            }
+          }
+      )
+
+      // let productoUpdate = productos.map(producto => {
+      //   if(producto.id == req.body.id ){
+           
+      //     return producto = {
+      //       id: req.body.id,
+      //         nombre: req.body.name,
+      //         descripcion: req.body.description,
+      //         imagen: req.file.filename,
+      //         precio: req.body.price,
+      //         categoria: req.body.category
+      //     }
+      //   }
+      //   return producto;
+      //  })
+
+      // let productoActualizar = JSON.stringify(productoUpdate, null, 2);
+      // fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), productoActualizar);
+      
+        db.Producto.findAll({
+          include : [{association : 'estados'}, {association : 'categorias'}]
+         })
+        .then(function(productos){
+            return res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos:productos});
+        } ) 
     },
 
     //Renderiza el formulario de Borrado
     delete: (req,res) => {
 
-      let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
-      //  res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos});
-      const productoDeleteId = req.params.id;
-      const productosFinal = productos.filter(producto => producto.id != productoDeleteId);
-      let productosGuardar = JSON.stringify(productosFinal, null,2);
-      fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), productosGuardar);
+      // let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+      // //  res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos});
+      // const productoDeleteId = req.params.id;
+      // const productosFinal = productos.filter(producto => producto.id != productoDeleteId);
+      // let productosGuardar = JSON.stringify(productosFinal, null,2);
+      // fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), productosGuardar);
 
-      res.redirect('/admin');
+      db.Producto.update({
+        estado_id: 2
+      },{
+      where: {
+        id: req.params.id
+      }
+      })
+
+      db.Producto.findAll({
+        include : [{association : 'estados'}, {association : 'categorias'}]
+       })
+      .then(function(productos){
+          return res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos:productos});
+      } ) 
 
     },
 
     //Renderiza el formulario de Creación
     create: (req,res) => {
       
+      // ***BD*** Busca todas las categorias en Base de Datos y las muestra
         db.Categoria.findAll()
         .then(function(categorias){
             return res.render ('./products/create_product', {categorias:categorias});
@@ -113,15 +172,24 @@ const controller = {
 
     mostrar: (req,res) =>{
 
-    let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
-    let miProducto;
-    productos.forEach(producto => {
-        if(producto.id == req.params.id){
-            miProducto = producto;
-        }
-    });
+    // let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+    // let miProducto;
+    // productos.forEach(producto => {
+    //     if(producto.id == req.params.id){
+    //         miProducto = producto;
+    //     }
+    // });
 
-    res.render(path.resolve(__dirname,'../src/views/products/productDetail'), {miProducto})
+    // ***BD*** Busca todos los productos en Base de Datos y los muestra
+    db.Producto.findByPk(req.params.id, {
+       include : [{association : 'estados'}, {association : 'categorias'}]
+     })
+     .then(function(miProducto){
+            console.log (miProducto);
+             return res.render(path.resolve(__dirname,'../src/views/products/productDetail'), {miProducto})
+     } ) 
+
+    
 },
 }
 

@@ -31,8 +31,9 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: true
         },
 
-        codigo: {
-            type: dataTypes.STRING
+        estado_id: {
+            type: dataTypes.INTEGER,
+            foreignKey: true
         },
 
         nombre: {
@@ -66,14 +67,23 @@ module.exports = (sequelize, dataTypes) => {
 
     Producto.associate = function(models) {
         Producto.belongsTo(models.Categoria,{
-            as: 'categoria',
-            foreignKey: 'id'
+            as: 'categorias',
+            foreignKey: 'categoria_id'
         });
 
-        // Producto.belongsTo(models.Detalle,{
-        //     as: 'producto',
-        //     foreignKey: 'productos_id'
-        // });
+        Producto.belongsTo(models.Estado,{
+            as: 'estados',
+            foreignKey: 'estado_id'
+        });
+
+        Producto.belongsToMany(models.Venta,{
+            as: 'ventas',
+            through: models.Detalle,
+            foreignKey: 'producto_id',
+            otherKey: 'venta_id',
+            timestamps: false
+
+        });
 
     }
 

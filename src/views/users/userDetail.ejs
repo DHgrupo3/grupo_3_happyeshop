@@ -18,12 +18,12 @@
 <body>
     <%- include ("../partials/header") %>
     <div class="alert alert-success" role="alert">
-        <b>Hola <%=user.nombre%>!</b>
+        <b>Usuario <%=user.nombre%>&nbsp;<%=user.apellido%></b>
     </div>
     <section class="container-fluid _footer bg-body-tertiary _card">
 
         <div class="card" style="width: 18rem;">&nbsp;
-            <img src="../img/users/<%=user.imagen%>" class="rounded mx-auto d-block" alt="...">
+            <img src="/img/users/<%=user.imagen%>" class="rounded mx-auto d-block" style="width: 14rem;" alt="...">
             <div class="card-body">
               <h5 class="card-title"><%=user.nombre%>&nbsp;<%=user.apellido%></h5>
               <p class="card-text">
@@ -31,7 +31,7 @@
                 <strong>Correo:</strong> <%=user.email%><br>
                 <strong>Estado:</strong> <%=user.estadosusuario.nombre%><br>
               </p>
-              <a href="/" class="btn btn-outline-success btn-sm">Inicio</a>
+              <a href="/user" class="btn btn-outline-success btn-sm">Volver</a>
             </div>
         </div>
 

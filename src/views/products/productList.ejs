@@ -25,10 +25,13 @@
         <!-- Busca todos los productos y los muestra -->
 
         <div class="row row-cols-1 row-cols-md-2 g-4 _card">
-          <%productos.forEach(productos => { %>
+          <%productos.forEach(productos => { if (productos.estado_id == 1) {%>
             <div class="col">
               <div class="card h-100 border-success">
-                <img src="/img/productos/<%= productos.imagen%>" class="rounded mx-auto d-block h-50" alt="...">
+                <div class="card-body">
+                  <h4 class="card-title" style="text-align: right;"><%= productos.categorias.nombre%>&nbsp;&nbsp;&nbsp;</h4>
+                </div>
+                <img src="/img/productos/<%= productos.imagen%>" class="rounded mx-auto d-block" style="width: 14rem;" alt="...">
                 <div class="card-body">
                   <h5 class="card-title"><%= productos.nombre%></h5>
                   <h5 class="card-title"><%= productos.precio%></h5>
@@ -38,7 +41,7 @@
                 </div>
               </div>
             </div>
-            <%  }); %>
+            <%  }}); %>
 
 
           </div>
