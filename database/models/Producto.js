@@ -37,7 +37,8 @@ module.exports = (sequelize, dataTypes) => {
         },
 
         nombre: {
-            type: dataTypes.STRING
+            type: dataTypes.STRING 
+
         },
 
         descripcion: {

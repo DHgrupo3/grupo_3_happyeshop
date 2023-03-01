@@ -48,51 +48,52 @@ const controller = {
 
     validar: (req,res) => {
         
-        db.Usuario.findOne({ 
-            where: {
+            db.Usuario.findOne({ 
+                include : [{association : 'estadosusuario'}, {association : 'pais'}],
+                where: {
                 email: req.body.email
-            }}).then (function(userToLogin) {
+            }})
+            
+            .then ( function(userToLogin) {
 
-                if (userToLogin.estado_id == 1) {
+            if (userToLogin.estadosusuario.nombre == "Activo" || userToLogin.estadosusuario.nombre == "Admin") {
 
-                console.log ("Ingresa a Validar");
+                        console.log ("Ingresa a Validar");
 
-                let passwordCheck = bcryptjs.compareSync(req.body.password, userToLogin.password)
-
-                console.log ("                                                  ");
-                console.log ("****************   Password Check ****************");
-                console.log ("                                                  ");
-                console.log ("Password Check from BODY -->   " + req.body.password);
-                console.log ("                                                  ");
-                console.log ("Password Check from DATABASE -->   " + userToLogin.password);
-                console.log ("                                                  ");
-                console.log ("Password Check -->   " + passwordCheck);
-                console.log ("                                                  ");
-                console.log ("**************************************************");
-                console.log ("                                                  ");
-        
-                if (passwordCheck) {
-                    
-                    delete userToLogin.password;
-                    req.session.userLogged = userToLogin;
-
-                    if (req.body.remember) {
-                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) *2 })
-                    }
+                        let passwordCheck = bcryptjs.compareSync(req.body.password, userToLogin.password)
                 
-                    return res.redirect ('/user/userProfile')
-                };
+                        if (passwordCheck) {
+                            
+                            delete userToLogin.password;
+                            req.session.userLogged = userToLogin;
 
+                            console.log("---------------------");
+                            console.log("    En USER CTRL     ");
+                            console.log(req.session.userLogged);
+                            console.log("                     ");
+                            console.log("---------------------");
+
+                            if (req.body.remember) {
+                                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) *2 })
+                            }
+                        
+                            let user = userToLogin; 
+
+                            return res.render ('./users/userProfile',{user:user})
+
+                        } else {
+
+                            return res.render ('./users/login', {
+                                errors:{ email:{ msg: 'las credenciales son invalidas' }}
+                            });
+                        }
+
+            } else {
                 return res.render ('./users/login', {
-                    errors:{
-                        email:{
-                            msg: 'las credenciales son invalidas'
-                    }}
+                    errors:{ email:{ msg: 'El email no corresponde a un usuario Registrado / Activo' } }
                 });
+            }})
 
-                   } //UserToLogin
-        
-        })
 
         // xxxxxx  Validación con JSON xxxxxxxx  
             // let userToLogin = User.findByField('email', req.body.email);
@@ -123,14 +124,6 @@ const controller = {
             // }
 
         //console.log(userToLogin);//
-        
-        return res.render ('./users/login', {
-            errors:{
-                email:{
-                    msg: 'El email no corresponde a un usuario registrado'
-                }
-            }
-        });
    
     },
 
@@ -186,23 +179,29 @@ const controller = {
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
+
+            console.log("Error Validación");
+            
             db.Pais.findAll()
             .then(function(pais){
-                    return res.render('./users/register', {
-                        errors: resultValidation.mapped(),
-                        oldData: req.body
-                        }, 
-                        {pais:pais});
+
+                console.log("       ");
+                console.log("Paises a Mostrar tras el error");
+                console.log(resultValidation.mapped());
+
+                return res.render('./users/register', { errors: resultValidation.mapped(), oldData: req.body,  pais:pais});
         })}
 
         //evito que el mail ya este registrado//
-
+        
         db.Usuario.findOne({ 
             where: {
                 email: req.body.email
             }}).then (function(userInDb) {
 
                 if (userInDb) {
+
+                    console.log("Usuario Registrado");
 
                     db.Pais.findAll()
                         .then(function(pais){
@@ -212,8 +211,7 @@ const controller = {
                                     msg: 'este email ya esta registrado'
                                 }
                         } , 
-                        oldData: req.body
-                    }, {pais:pais});
+                        oldData: req.body, pais:pais});
                     
             })}})
 
@@ -231,7 +229,9 @@ const controller = {
 
         db.Usuario.create(userToCreate);
 
-		// //return res.send('Ok, las validaciones se pasaron y no tienes errores');
+        console.log("Ok, las validaciones se pasaron y no tienes errores");
+		//return res.send('Ok, las validaciones se pasaron y no tienes errores');
+        
         return res.render ('./users/login');
 	},
 
@@ -249,9 +249,7 @@ const controller = {
                    .then(function(pais){
                         return res.render('./users/registerAdmin', {
                             errors: resultValidation.mapped(),
-                            oldData: req.body
-                            }, 
-                            {pais:pais});
+                            oldData: req.body, pais:pais});
             })}
 
             //evito que el mail ya este registrado//
@@ -271,8 +269,7 @@ const controller = {
                                         msg: 'este email ya esta registrado'
                                     }
                             } , 
-                            oldData: req.body
-                        }, {pais:pais});
+                            oldData: req.body, pais:pais});
                         
                 })}})
     
@@ -290,7 +287,7 @@ const controller = {
 
             db.Usuario.create(userToCreate);
     
-            // ***BD*** Busca todos los productos en Base de Datos y los muestra
+            // ***BD*** Busca todos los usuarios en Base de Datos y los muestra
              db.Usuario.findAll({
                 include : [{association : 'estadosusuario'}, {association : 'pais'}]
                })

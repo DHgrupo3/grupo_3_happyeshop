@@ -48,6 +48,11 @@ const validations = [
 	})
 ]
 
+const validateUserLogin = [
+	body('email').notEmpty().withMessage('Por favor ingresa el email con el que te registraste'),
+	body('email').isEmail().withMessage('Por favor ingresa un email valido'),
+  ]
+
 router.get('/', userController.index);
 router.get ('/register', guestMiddleware, userController.register);
 router.get ('/registerAdmin', guestMiddleware, userController.registerAdmin);
@@ -60,7 +65,7 @@ router.get ('/contactanos', userController.contact);
 router.get ('/terminos', userController.terminos);
 router.post ('/register', upload.single('avatar'), validations, userController.save);
 router.post ('/registerAdmin', upload.single('avatar'), validations, userController.saveAdmin);
-router.post ('/login', userController.validar);
+router.post ('/login', validateUserLogin, userController.validar);
 router.get ('/userProfile', authMiddleware, userController.profile);
 router.get ('/logout', userController.logout);
 router.get('/userDetail/:id', userController.mostrar);
