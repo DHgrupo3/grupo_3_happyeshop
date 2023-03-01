@@ -36,8 +36,9 @@
                   <h5 class="card-title"><%= productos.nombre%></h5>
                   <h5 class="card-title"><%= productos.precio%></h5>
                   <p class="card-text"><%= productos.codigo%></p>
-                  <p class="card-text"><%= productos.descripcion%></p>
-                  <a href="#" class="btn btn-outline-success">Agregar al Carrito</a>
+                  <!-- <p class="card-text"><%//= productos.descripcion%></p> -->
+                  <p class="card-text"><a href="/admin/productDetailGeneral/<%= productos.id%>" class="btn btn-outline-success">Ver Detalle</a>&nbsp;&nbsp;&nbsp;<a href="#" class="btn btn-outline-success">Agregar al Carrito</a></p>
+                  
                 </div>
               </div>
             </div>

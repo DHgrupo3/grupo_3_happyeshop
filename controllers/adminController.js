@@ -191,6 +191,27 @@ const controller = {
 
     
 },
+mostrarGeneral: (req,res) =>{
+
+  // let productos = JSON.parse(fs.readFileSync(path.resolve(__dirname, '../src/database/productos.json' )));
+  // let miProducto;
+  // productos.forEach(producto => {
+  //     if(producto.id == req.params.id){
+  //         miProducto = producto;
+  //     }
+  // });
+
+  // ***BD*** Busca todos los productos en Base de Datos y los muestra
+  db.Producto.findByPk(req.params.id, {
+     include : [{association : 'estados'}, {association : 'categorias'}]
+   })
+   .then(function(miProducto){
+          console.log (miProducto);
+           return res.render(path.resolve(__dirname,'../src/views/products/productDetailGeneral'), {miProducto})
+   } ) 
+
+  
+}
 }
 
 
