@@ -6,6 +6,9 @@ const {json} = require('express');
 //Conexión a Base de Datos
 const db = require("../database/models");
 
+const { validationResult } = require('express-validator');
+
+
 const controller = {
     index: (req,res)=>{
 
@@ -49,21 +52,42 @@ const controller = {
       // let nuevoProductoGuardar = JSON.stringify(productos,null,2);
       // fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), nuevoProductoGuardar);
 
-      db.Producto.create({
-        nombre: req.body.name,
-        descripcion: req.body.description,
-        imagen: req.file.filename,
-        precio: req.body.price,
-        categoria_id: req.body.category,
-        estado_id: 1
-      });
+      const resultValidation = validationResult(req);
 
-      db.Producto.findAll({
-        include : [{association : 'estados'}, {association : 'categorias'}]
-       })
-      .then(function(productos){
-          return res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos:productos});
-      } ) 
+      if (resultValidation.errors.length > 0) {
+
+          console.log("Error Validación");
+                        
+          console.log("       ");
+          console.log(resultValidation.mapped());
+
+          db.Categoria.findAll()
+          .then(function(categorias){
+              return res.render ('./products/create_product', { errors: resultValidation.mapped(), oldData: req.body, categorias:categorias});
+          })
+        
+      }  else if (resultValidation.errors.length == 0) {
+
+        console.log("       ");
+        console.log("No hay errores y crea el productos!");
+
+
+            db.Producto.create({
+              nombre: req.body.name,
+              descripcion: req.body.description,
+              imagen: req.file.filename,
+              precio: req.body.price,
+              categoria_id: req.body.category,
+              estado_id: 1
+            });
+
+            db.Producto.findAll({
+              include : [{association : 'estados'}, {association : 'categorias'}]
+            })
+            .then(function(productos){
+                return res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos:productos});
+            } ) 
+      }
 
     },
 
@@ -90,21 +114,54 @@ const controller = {
 
       req.body.id = req.params.id;
       req.body.imagen = req.file ? req.file.filename : req.body.oldImagen;
-      
-      db.Producto.update({
-              nombre: req.body.name,
-              descripcion: req.body.description,
-              imagen: req.file.filename,
-              precio: req.body.price,
-              categoria_id: req.body.category,
-              estado_id: req.body.status
 
-          },{
-            where: {
-              id: req.params.id
-            }
-          }
-      )
+      const resultValidation = validationResult(req);
+
+      if (resultValidation.errors.length > 0) {
+
+          console.log("Error Validación");
+                        
+          console.log("       ");
+          console.log(resultValidation.mapped());
+
+          let pedidoProductos = db.Producto.findAll({include : [{association : 'estados'}, {association : 'categorias'}]});
+          let categoriasC = db.Categoria.findAll();
+          let estadosE = db.Estado.findAll();
+
+          Promise.all([pedidoProductos, categoriasC, estadosE])
+          .then(function([producto, categorias, estados]){
+
+            console.log("Errores -------------------------------");
+            console.log("       ");
+            console.log(producto);
+            console.log("     --------------------------  ");
+            console.log(categorias);
+            console.log("     ............................  ");
+            console.log(estados);
+
+              return res.render(path.resolve(__dirname, '../src/views/products/edit_product'), {errors: resultValidation.mapped(), oldData: req.body, producto:producto, categorias:categorias, estados:estados});
+          } ) 
+
+        
+      }  else if (resultValidation.errors.length == 0) {
+
+          console.log("       ");
+          console.log("No hay errores y crea el productos!");
+        
+          db.Producto.update({
+                  nombre: req.body.name,
+                  descripcion: req.body.description,
+                  imagen: req.file.filename,
+                  precio: req.body.price,
+                  categoria_id: req.body.category,
+                  estado_id: req.body.status
+
+              },{
+                where: {
+                  id: req.params.id
+                }
+              }
+          )
 
       // let productoUpdate = productos.map(producto => {
       //   if(producto.id == req.body.id ){
@@ -124,12 +181,14 @@ const controller = {
       // let productoActualizar = JSON.stringify(productoUpdate, null, 2);
       // fs.writeFileSync(path.resolve(__dirname,'../src/database/productos.json'), productoActualizar);
       
-        db.Producto.findAll({
-          include : [{association : 'estados'}, {association : 'categorias'}]
-         })
-        .then(function(productos){
-            return res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos:productos});
-        } ) 
+            db.Producto.findAll({
+              include : [{association : 'estados'}, {association : 'categorias'}]
+            })
+            .then(function(productos){
+                return res.render(path.resolve(__dirname, '../src/views/products/administrar'), {productos:productos});
+            } ) 
+
+      }
     },
 
     //Renderiza el formulario de Borrado

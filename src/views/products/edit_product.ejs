@@ -34,21 +34,36 @@
                     <!-- <div class="d-grid gap-2 col-6 mx-auto"> -->
                         <div>
                             <label for="name" class="form-label">Nombre del producto:</label>
-                            <input type="text" id="name" name="name" placeholder="Nombre del producto" class="form-control" value="<%= producto.nombre%>">
+                            <input type="text" id="name" name="name" placeholder="Nombre del producto" class="form-control" value="<%= locals.oldData ? oldData.name : producto.nombre %>">
+                            <% if (locals.errors && errors.name){ %>
+                                <div>
+                                <%= errors.name.msg %>
+                                </div>
+                                    <% } %>
                         </div>
                         <div>
                             <label for="description" class="form-label">Descipción:</label>
-                            <textarea name="description" class="form-control" id="description"><%= producto.descripcion%></textarea>
+                            <textarea name="description" class="form-control" id="description"><%= locals.oldData ? oldData.descripcion : producto.descripcion %></textarea>
+                            <% if (locals.errors && errors.description){ %>
+                                <div>
+                                <%= errors.description.msg %>
+                                </div>
+                                    <% } %>
                         </div>
 
                         <!--Aquí solicito la imagen-->
                         <div class="custom-file">
                             <figure class="form-group">
-                                <img  class="rounded mx-auto d-block w-50" src="/img/productos/<%=producto.imagen%>" alt="producto <%= producto.nombre%>">
+                                <img  class="rounded mx-auto d-block w-50" src="/img/productos/<%= locals.oldData ? oldData.imagen : producto.imagen %>" alt="producto <%= producto.nombre%>">
                             </figure>
                             <input type="hidden"  name="oldImagen"  value="<%= producto.imagen%>">
                             <!--De esta forma logro conservar y que viaje la imagen anterior de esta forma evito que el usuario seleccione una imagen nuevamente, ( si no lo desea) -->
-                            <input type="file" class="form-control" name="imagen" value="<%= producto.imagen%>" required> 
+                            <input type="file" class="form-control" name="imagen" value="<%= locals.oldData ? oldData.imagen : producto.imagen %>" >
+                            <% if (locals.errors && errors.imagen){ %>
+                                <div>
+                                <%= errors.imagen.msg %>
+                                </div>
+                                    <% } %> 
                         </div>
 
                         <div >

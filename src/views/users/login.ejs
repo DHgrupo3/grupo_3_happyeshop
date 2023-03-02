@@ -26,14 +26,17 @@
             <article>
                 
                 <div class="d-grid gap-2 col-4 mx-auto">
-                        <input class="form-control" type="email" name="email" placeholder="Email" required>
+                        <input class="form-control" type="email" name="email" placeholder="Email" >
                         <% if (locals.errors && errors.email) { %>
                             <div><%= errors.email.msg %></div>
                         <% } %>    
                 </div>
                 &nbsp;
                 <div class="d-grid gap-2 col-4 mx-auto">
-                        <input class="form-control" type="password" name="password" placeholder="Contraseña" required>
+                        <input class="form-control" type="password" name="password" placeholder="Contraseña" >
+                        <% if (locals.errors && errors.password) { %>
+                            <div><%= errors.password.msg %></div>
+                        <% } %>    
                 
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="remember"> Recordar usuario

@@ -30,15 +30,30 @@
                     <div >
                         <div >
                             <label for="name" class="form-label">Nombre del producto:</label>
-                            <input type="text" id="name" name="name" placeholder="Ej: Hidro Total" class="form-control">
+                            <input type="text" id="name" name="name" placeholder="Ej: Hidro Total" class="form-control" value= "<%= locals.oldData ? oldData.name : null %>">
+                            <% if (locals.errors && errors.name){ %>
+                                <div>
+                                <%= errors.name.msg %>
+                                </div>
+                                    <% } %>
                         </div>
                         <div >
                             <label for="description" class="form-label">Descipción:</label>
-                            <textarea name="description" id="description" class="form-control"></textarea>
+                            <textarea name="description" id="description" class="form-control"><%= locals.oldData ? oldData.description : null %></textarea>
+                            <% if (locals.errors && errors.description){ %>
+                                <div>
+                                <%= errors.description.msg %>
+                                </div>
+                                    <% } %>
                         </div>
                         <div >
                             <label for="imagen" class="form-label">Imagen:</label>
                             <input type="file" name="imagen" class="form-control"></input>
+                            <% if (locals.errors && errors.imagen){ %>
+                                <div>
+                                <%= errors.imagen.msg %>
+                                </div>
+                                    <% } %>
                         </div>
                         <div >
                             <label for="price" class="form-label">Precio del producto:</label>

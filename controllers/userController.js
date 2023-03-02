@@ -56,37 +56,39 @@ const controller = {
             
             .then ( function(userToLogin) {
 
-            if (userToLogin.estadosusuario.nombre == "Activo" || userToLogin.estadosusuario.nombre == "Admin") {
+            if (userToLogin){
+                    if (userToLogin.estadosusuario.nombre == "Activo" || userToLogin.estadosusuario.nombre == "Admin") {
 
-                        console.log ("Ingresa a Validar");
+                                console.log ("Ingresa a Validar");
 
-                        let passwordCheck = bcryptjs.compareSync(req.body.password, userToLogin.password)
-                
-                        if (passwordCheck) {
-                            
-                            delete userToLogin.password;
-                            req.session.userLogged = userToLogin;
-
-                            console.log("---------------------");
-                            console.log("    En USER CTRL     ");
-                            console.log(req.session.userLogged);
-                            console.log("                     ");
-                            console.log("---------------------");
-
-                            if (req.body.remember) {
-                                res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) *2 })
-                            }
+                                let passwordCheck = bcryptjs.compareSync(req.body.password, userToLogin.password)
                         
-                            let user = userToLogin; 
+                                if (passwordCheck) {
+                                    
+                                    delete userToLogin.password;
+                                    req.session.userLogged = userToLogin;
 
-                            return res.render ('./users/userProfile',{user:user})
+                                    console.log("---------------------");
+                                    console.log("    En USER CTRL     ");
+                                    console.log(req.session.userLogged);
+                                    console.log("                     ");
+                                    console.log("---------------------");
 
-                        } else {
+                                    if (req.body.remember) {
+                                        res.cookie('userEmail', req.body.email, { maxAge: (1000 * 60) *2 })
+                                    }
+                                
+                                    let user = userToLogin; 
 
-                            return res.render ('./users/login', {
-                                errors:{ email:{ msg: 'las credenciales son invalidas' }}
-                            });
-                        }
+                                    return res.render ('./users/userProfile',{user:user})
+
+                                } else {
+
+                                    return res.render ('./users/login', {
+                                        errors:{ email:{ msg: 'las credenciales son invalidas' }}
+                                    });
+                                }
+                            }
 
             } else {
                 return res.render ('./users/login', {
@@ -174,23 +176,25 @@ const controller = {
 
         //Reviso que es lo que recibo
         console.log(req.body, req.file);
-                    
+
+     
                     
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
 
-            console.log("Error Validación");
-            
-            db.Pais.findAll()
-            .then(function(pais){
-
+                console.log("Error Validación");
+                       
                 console.log("       ");
                 console.log("Paises a Mostrar tras el error");
                 console.log(resultValidation.mapped());
-
-                return res.render('./users/register', { errors: resultValidation.mapped(), oldData: req.body,  pais:pais});
-        })}
+               
+                db.Pais.findAll()
+                .then (function(pais) {
+                    return res.render('./users/register', { errors: resultValidation.mapped(), oldData: req.body,  pais:pais});
+                })
+            
+        } 
 
         //evito que el mail ya este registrado//
         
@@ -213,27 +217,32 @@ const controller = {
                         } , 
                         oldData: req.body, pais:pais});
                     
-            })}})
+            })} else if (resultValidation.errors.length == 0) {
 
-        let userToCreate = {
-            nombre: req.body.nombre,
-            apellido: req.body.apellido,
-            email: req.body.email,
-            password: bcryptjs.hashSync(req.body.password, 10),
-            pais_id: req.body.pais,
-            imagen: req.file.filename,
-            estado_id: 1
+            console.log("       ");
+            console.log("Llega hasta acá");
+
+            let userToCreate = {
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                email: req.body.email,
+                password: bcryptjs.hashSync(req.body.password, 10),
+                pais_id: req.body.pais,
+                imagen: req.file.filename,
+                estado_id: 1
+            }
+
+            //res.send(userToCreate);
+
+            db.Usuario.create(userToCreate);
+
+            console.log("Ok, las validaciones se pasaron y no tienes errores");
+            //return res.send('Ok, las validaciones se pasaron y no tienes errores');
+            
+            return res.render ('./users/login');
         }
 
-        //res.send(userToCreate);
-
-        db.Usuario.create(userToCreate);
-
-        console.log("Ok, las validaciones se pasaron y no tienes errores");
-		//return res.send('Ok, las validaciones se pasaron y no tienes errores');
-        
-        return res.render ('./users/login');
-	},
+	})},
 
         //Guarda los resultados de una creación
         saveAdmin: (req,res)=>{
