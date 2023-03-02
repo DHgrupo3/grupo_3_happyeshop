@@ -38,13 +38,14 @@ const validations = [
 
 				return true;
 
-	})
+	}),
+	body('price').notEmpty().withMessage('Tienes que indicar un precio para este producto')
 ];
 
 router.get('/', adminController.index);
 router.post ('/create_product', upload.single('imagen'), validations, adminController.save);
 router.get ('/edit_product/:id', adminController.edit);
-router.put ('/edit_product/:id', upload.single('imagen'), validations, adminController.update);
+router.put ('/edit_product/:id', upload.single('imagen'),  validations, adminController.update);
 router.get ('/delete_product/:id', adminController.delete);
 router.get ('/create_product', adminController.create);
 router.get('/productDetail/:id', adminController.mostrar);
