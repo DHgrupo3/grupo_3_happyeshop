@@ -42,6 +42,8 @@ const validations = [
 	body('price').notEmpty().withMessage('Tienes que indicar un precio para este producto')
 ];
 
+//Comentario
+
 router.get('/', adminController.index);
 router.post ('/create_product', upload.single('imagen'), validations, adminController.save);
 router.get ('/edit_product/:id', adminController.edit);
