@@ -60,6 +60,12 @@ const userRouter = require ('./routes/users');
 const adminRouter = require ('./routes/admin');
 const { METHODS } = require('http');
 
+
+//Aquí pueden colocar las rutas de las APIs
+const usuarioAPIRouter = require("./routes/api/usuariosRoutes");
+const productosAPIRouter = require("./routes/api/productosRoutes");
+
+
 app.use('/', mainRouter);
 
 app.use('/products', productsRouter);
@@ -68,6 +74,9 @@ app.use('/user', userRouter);
 
 app.use('/admin', adminRouter);
 
+//Aquí pueden colocar APIs
+app.use("/api/usuarios", usuarioAPIRouter);
+app.use("/api/productos", productosAPIRouter);
 
 
 //app.use('/login', userRouter);
