@@ -12,6 +12,8 @@ const userLoggedMiddleware = require('./src/middlewares/userLoggedMiddleware');
 //Ejecutamos la función y almacenamos el objeto que devuelve en la constante app. Ahora, tenemos accesos a tdoas las propiedades y métodos que nos da express.
 const app = express();
 
+const cors = require("cors");
+app.use(cors());
 
 
 const methodOverride = require('method-override');
@@ -30,7 +32,7 @@ app.set('views', path.join(__dirname, '/src/views')); // Define la ubicación de
 
 
 //Al objeto app le pedidos el metodo listen, que se encargará de levantar el servidor. Parámetros: PUERTO | FUNCIÓN (Callback)
-app.listen(3000, () => console.log ("Servidor corriendo"));
+app.listen(3001, () => console.log ("Servidor corriendo"));
 
 //ejecutamos express-session//
 
@@ -64,6 +66,7 @@ const { METHODS } = require('http');
 //Aquí pueden colocar las rutas de las APIs
 const usuarioAPIRouter = require("./routes/api/usuariosRoutes");
 const productosAPIRouter = require("./routes/api/productosRoutes");
+const categoriasAPIRouter = require("./routes/api/categoriasRoutes");
 
 
 app.use('/', mainRouter);
@@ -77,6 +80,7 @@ app.use('/admin', adminRouter);
 //Aquí pueden colocar APIs
 app.use("/api/usuarios", usuarioAPIRouter);
 app.use("/api/productos", productosAPIRouter);
+app.use("/api/categorias", categoriasAPIRouter);
 
 
 //app.use('/login', userRouter);
